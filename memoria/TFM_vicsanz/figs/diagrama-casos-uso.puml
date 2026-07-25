@@ -1,0 +1,47 @@
+@startuml
+skin rose
+skinparam dpi 150
+skinparam nodesep 30
+skinparam ranksep 40
+skinparam usecase {
+    BackgroundColor<<primary>> #DCEAF5
+    BorderColor<<primary>> #2F6B9A
+}
+left to right direction
+
+actor "Persona usuaria" as User
+
+note right of User
+  Acceso primario: WebUI (Expo / React Native Web, ws://127.0.0.1:8765).
+  Diagnóstico e instalación: TUI (Python / Rich).
+end note
+
+rectangle "LocalMind-AI" {
+
+  usecase "CU1: Iniciar conversación" as UC1 <<primary>>
+  usecase "CU2: Enviar mensaje y recibir\nrespuesta CoT" as UC2 <<primary>>
+  usecase "CU3: Cambiar modelo LLM" as UC3 <<primary>>
+  usecase "CU4: Indexar documento" as UC4 <<primary>>
+  usecase "CU5: Buscar en base de\nconocimiento (RAG)" as UC5 <<primary>>
+  usecase "CU6: Generar reporte PDF" as UC6 <<primary>>
+  usecase "CU7: Ejecutar herramienta\ncon confirmación" as UC7 <<primary>>
+  usecase "CU8: Detener generación (/stop)" as UC8 <<primary>>
+  usecase "CU9: Instalar y configurar\nsistema" as UC9 <<primary>>
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC8
+User --> UC9
+
+UC2 ..> UC5 : <<include>>
+UC6 ..> UC2 : <<extend>>
+UC7 ..> UC2 : <<extend>>
+UC8 ..> UC2 : <<extend>>
+
+@enduml

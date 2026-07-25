@@ -1,0 +1,33 @@
+@startuml
+!theme plain
+scale 1.65
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 22
+skinparam ArrowFontSize 18
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+title Planificación y selección de herramientas en TinyAgent
+
+actor "Persona usuaria" as user
+rectangle "Petición" as request #DDEBF7
+rectangle "Planificador" as planner #FFF2CC
+rectangle "Plan de funciones" as plan #FFFFFF
+database "Índice ToolRAG" as toolrag #E2F0D9
+rectangle "Selector de\nherramientas" as selector #FFFFFF
+rectangle "Modelo ligero\ncuantizado" as model #FCE4D6
+rectangle "Herramienta elegida" as tool #FFFFFF
+rectangle "Resultado" as result #DDEBF7
+
+user --> request
+request --> planner
+planner --> plan : descompone la tarea
+plan --> toolrag : consulta funciones relevantes
+toolrag --> selector : candidatos recuperados
+plan --> selector : requisito de cada paso
+selector --> model : contexto de función
+model --> tool : invocación planificada
+tool --> result
+result --> user
+@enduml

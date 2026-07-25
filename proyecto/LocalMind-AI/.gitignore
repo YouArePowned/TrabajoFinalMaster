@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment
+.env
+*.env.local
+
+# Expo
+.expo/
+dist/
+
+# Docker volumes
+ollama-data/
+nanobot-workspace/
+nanobot-outputs/
+
+# Nanobot runtime
+.nanobot/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+
+# Logs
+*.log

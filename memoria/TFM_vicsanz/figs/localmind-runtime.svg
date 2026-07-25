@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160mm" height="90mm" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Entorno de ejecución local de LocalMind-AI</title>
+  <desc id="desc">El despliegue utiliza dos servicios Compose: un cliente Expo estático servido por Nginx y Nanobot. El navegador descarga la aplicación desde Nginx y se conecta directamente con WebSocket o REST de Nanobot. La inferencia permanece en el anfitrión.</desc>
+  <defs>
+    <marker id="arrowStandard" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowClient" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/>
+    </marker>
+    <style><![CDATA[
+      text{font-family:Arial,Helvetica,sans-serif;fill:#0F172A}
+      .title{font-size:44px;font-weight:700}
+      .subtitle{font-size:30px;fill:#475569}
+      .host{fill:#F8FAFC;stroke:#94A3B8;stroke-width:6}
+      .compose{fill:#EFF6FF;stroke:#1D4ED8;stroke-width:7}
+      .actor{fill:#FFFFFF;stroke:#475569;stroke-width:6}
+      .client{fill:#DBEAFE;stroke:#1D4ED8;stroke-width:6}
+      .agent{fill:#CFFAFE;stroke:#0E7490;stroke-width:6}
+      .comm{fill:#E0E7FF;stroke:#4338CA;stroke-width:5}
+      .service{fill:#D1FAE5;stroke:#047857;stroke-width:6}
+      .nodeTitle{font-size:32px;font-weight:700;text-anchor:middle}
+      .boundaryTitle{font-size:32px;font-weight:700}
+      .body{font-size:30px;text-anchor:middle}
+      .small{font-size:30px;text-anchor:middle;fill:#475569}
+      .arrow{fill:none;stroke:#475569;stroke-width:7;marker-end:url(#arrowStandard)}
+      .clientArrow{fill:none;stroke:#1D4ED8;stroke-width:7;marker-end:url(#arrowClient)}
+    ]]></style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <text class="title" x="45" y="68">Despliegue local y límites de ejecución</text>
+  <text class="subtitle" x="45" y="112">Dos servicios Compose; inferencia acelerada en el anfitrión</text>
+
+  <rect class="host" x="25" y="140" width="1550" height="710" rx="28"/>
+  <text class="subtitle" x="65" y="185">Equipo anfitrión: macOS, Linux o Windows</text>
+
+  <rect class="actor" x="60" y="240" width="260" height="205" rx="22"/>
+  <text class="nodeTitle" x="190" y="295">Navegador</text>
+  <text class="body" x="190" y="340"><tspan x="190">SPA · puerto 8081</tspan><tspan x="190" dy="38">conecta directo</tspan><tspan x="190" dy="38">con el agente</tspan></text>
+
+  <rect class="actor" x="60" y="555" width="260" height="155" rx="22"/>
+  <text class="nodeTitle" x="190" y="610">TUI Python</text>
+  <text class="body" x="190" y="655"><tspan x="190">instala, configura</tspan><tspan x="190" dy="38">y controla</tspan></text>
+
+  <rect class="compose" x="390" y="195" width="760" height="535" rx="28"/>
+  <text class="boundaryTitle" x="430" y="238">Docker Compose</text>
+
+  <rect class="client" x="440" y="260" width="660" height="150" rx="20"/>
+  <text class="nodeTitle" x="770" y="305">Servicio frontend</text>
+  <text class="body" x="770" y="350"><tspan x="770">Expo / React Native Web · activos estáticos</tspan><tspan x="770" dy="38">Nginx runtime · publicación 8081:80</tspan></text>
+
+  <rect class="agent" x="440" y="460" width="660" height="220" rx="22"/>
+  <text class="nodeTitle" x="770" y="500">Servicio nanobot</text>
+  <text class="small" x="770" y="535"><tspan x="770">Python slim · nanobot (UID 1000)</tspan><tspan x="770" dy="32">límite de memoria: 4 GiB</tspan></text>
+
+  <rect class="comm" x="470" y="590" width="180" height="70" rx="14"/>
+  <text class="body" x="560" y="614"><tspan x="560">WebSocket</tspan><tspan x="560" dy="32">puerto 8765</tspan></text>
+  <rect class="comm" x="670" y="590" width="180" height="70" rx="14"/>
+  <text class="body" x="760" y="614"><tspan x="760">API REST</tspan><tspan x="760" dy="32">puerto 8900</tspan></text>
+  <rect class="service" x="860" y="590" width="220" height="70" rx="14"/>
+  <text class="body" x="970" y="614"><tspan x="970">MCP / Engram</tspan><tspan x="970" dy="32">subprocesos</tspan></text>
+
+  <rect class="service" x="1190" y="225" width="350" height="200" rx="22"/>
+  <text class="nodeTitle" x="1365" y="275">Inferencia nativa</text>
+  <text class="body" x="1365" y="320"><tspan x="1365">Ollama u oMLX</tspan><tspan x="1365" dy="38">host.docker.internal</tspan><tspan x="1365" dy="38">aceleración del anfitrión</tspan></text>
+
+  <rect class="service" x="1190" y="505" width="350" height="190" rx="22"/>
+  <text class="nodeTitle" x="1365" y="545"><tspan x="1365">Persistencia</tspan><tspan x="1365" dy="36">requerida</tspan></text>
+  <text class="body" x="1365" y="620"><tspan x="1365">workspace · sesiones</tspan><tspan x="1365" dy="30">resultados · ChromaDB</tspan><tspan x="1365" dy="30">Engram</tspan></text>
+
+  <path class="clientArrow" d="M440 330 H320"/>
+
+  <path class="arrow" d="M320 430 H350 V445 H420 V610 H440"/>
+
+  <path class="arrow" d="M320 655 H390"/>
+
+  <path class="arrow" d="M1100 525 H1165 V325 H1190"/>
+
+  <path class="arrow" d="M1100 625 H1190"/>
+
+  <path class="arrow" d="M190 710 V790 H1555 V325 H1540"/>
+  <text class="small" x="800" y="825">la TUI configura y controla el motor nativo</text>
+</svg>

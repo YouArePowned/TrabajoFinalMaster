@@ -1,0 +1,83 @@
+{
+  "providers": {
+    "custom": {
+      "apiBase": "http://host.docker.internal:8082/v1",
+      "apiKey": "valsalobre675"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "provider": "custom",
+      "model": "mlx-community/Ornith-1.0-9B-4bit",
+      "maxToolIterations": 25,
+      "contextWindowTokens": 8192,
+      "maxToolResultChars": 8000,
+      "temperature": 0.7,
+      "timezone": "Europe/Madrid",
+      "idleCompactAfterMinutes": 10,
+      "unifiedSession": true,
+      "disabledSkills": [],
+      "disabled_skills": []
+    }
+  },
+  "channels": {
+    "websocket": {
+      "enabled": true,
+      "host": "0.0.0.0",
+      "port": 8765,
+      "path": "/ws",
+      "websocketRequiresToken": false,
+      "allowFrom": [
+        "*"
+      ],
+      "streaming": true
+    }
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8900
+  },
+  "tools": {
+    "web": {
+      "enable": true
+    },
+    "exec": {
+      "enable": true
+    },
+    "filesystem": {
+      "enable": true,
+      "allowedDirs": [
+        "/tmp/localmind-outputs",
+        "/app/sandbox"
+      ]
+    },
+    "mcpServers": {
+      "localmind-tools": {
+        "command": "python3",
+        "args": [
+          "-m",
+          "mcp_tools.server"
+        ],
+        "env": {
+          "SANDBOX_DIR": "/app/sandbox",
+          "OUTPUTS_DIR": "/app/outputs",
+          "OLLAMA_URL": "http://host.docker.internal:11434"
+        }
+      },
+      "engram": {
+        "command": "pnpm",
+        "args": [
+          "--package=engram-sdk",
+          "dlx",
+          "engram-mcp"
+        ],
+        "env": {
+          "ENGRAM_DATA_DIR": "/app/engram"
+        }
+      }
+    },
+    "my": {
+      "enable": true
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@startuml
+skin rose
+skinparam dpi 150
+skinparam nodesep 30
+skinparam ranksep 40
+
+start
+
+:Cliente solicita conexión WebSocket;
+:Intentar handshake en ws://127.0.0.1:8765;
+
+if (¿Handshake exitoso?) then (sí)
+    :Establecer conexión activa;
+    :Entrar en estado preparado (Ready);
+
+    repeat
+        :Esperar eventos en el canal;
+
+        if (¿Tipo de evento?) then (new_chat)
+            :Iniciar transmisión en streaming;
+
+            repeat
+                :Recibir token incremental del LLM;
+                :Emitir paquete stream_delta al WebUI;
+            backward:Continuar generación;
+            repeat while (¿Inferencia activa?) is (sí)
+            ->no ([DONE]);
+
+            if (¿Finalización normal o cancelación?) then (Finalización [DONE])
+                :Enviar paquete stream_end;
+                :Guardar respuesta completa en JSONL;
+            else (Cancelación /stop)
+                :Interrumpir emisión continua;
+                :Guardar respuesta parcial en JSONL;
+            endif
+
+        elseif (heartbeat / ping)
+            :Enviar respuesta pong de control;
+
+        else (desconexión explícita)
+            :Cerrar conexión limpiamente;
+            stop
+
+        endif
+
+    repeat while (¿Canal operativo sin errores?) is (sí)
+    ->no (error de red / caída);
+
+else (no / timeout / puerto cerrado)
+endif
+
+:Registrar incidente en observabilidad;
+:Notificar error comprensible a la persona usuaria;
+:Iniciar reconexión con retroceso exponencial (máx 5s);
+
+stop
+
+@enduml

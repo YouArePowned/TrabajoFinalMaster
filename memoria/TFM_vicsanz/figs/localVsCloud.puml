@@ -1,0 +1,23 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+
+rectangle "Inferencia en la nube" as Cloud #E1F5FE {
+  rectangle "Datos del usuario" as UserData1
+  rectangle "Red pública" as Net1
+  rectangle "Servidor remoto\n(LLM / GPU)" as Remote
+  UserData1 --> Net1 : datos salen del dispositivo
+  Net1 --> Remote : petición / respuesta
+}
+
+rectangle "Inferencia local" as Local #FFF8E1 {
+  rectangle "Dispositivo del usuario" as Device
+  rectangle "Datos permanecen\nen el dispositivo" as UserData2
+  rectangle "LLM cuantizado\n(GPU/Metal/NPU)" as LocalLLM
+  UserData2 --> Device
+  Device --> LocalLLM : inferencia on-device
+}
+
+Cloud -[hidden]-> Local
+
+@enduml

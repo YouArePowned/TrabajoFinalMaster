@@ -1,0 +1,101 @@
+@startuml
+skin rose
+skinparam dpi 150
+skinparam nodesep 30
+skinparam ranksep 40
+skinparam class {
+    BackgroundColor<<agente>> #LightBlue
+    BackgroundColor<<proveedor>> #LightGreen
+    BackgroundColor<<cliente>> #LightYellow
+}
+
+package "Agente" <<agente>> {
+    class AgentLoop {
+        + process_message(envelope)
+        + create_session()
+    }
+    class AgentRunner {
+        + run(spec)
+    }
+    class ContextBuilder {
+        + build_context(message)
+    }
+    class ToolRegistry {
+        + resolve(name)
+        + register(tool)
+    }
+}
+
+package "Proveedores y Canales" <<proveedor>> {
+    abstract class LLMProvider {
+        + {abstract} complete(prompt)
+        + {abstract} stream(prompt)
+    }
+    class OpenAICompatProvider {
+        + complete(prompt)
+        + stream(prompt)
+    }
+    class AnthropicProvider {
+        + complete(prompt)
+    }
+    class ChannelManager {
+        + register(channel)
+    }
+    class WebSocketChannel {
+        + send_delta(delta)
+        + accept(ws)
+    }
+    class MessageBus {
+        + publish(event)
+        + subscribe(handler)
+    }
+    class McpToolsServer {
+        + execute_tool(name, params)
+        + generate_pdf(content)
+    }
+}
+
+package "Cliente / Persistencia" <<cliente>> {
+    class ChromaCollection {
+        + add(fragments, embeddings)
+        + query(embedding, top_k)
+    }
+    class LocalMindEmbeddingFunction {
+        + embed(texts)
+    }
+}
+
+' Composición: AgentLoop posee el ciclo de vida de sus colaboradores (rombo negro)
+AgentLoop *-- AgentRunner
+AgentLoop *-- ContextBuilder
+AgentLoop *-- ToolRegistry
+AgentRunner *-- LLMProvider
+
+' Herencia
+LLMProvider <|-- OpenAICompatProvider
+LLMProvider <|-- AnthropicProvider
+
+' Canales y MessageBus
+ChannelManager *-- WebSocketChannel
+WebSocketChannel <--> MessageBus
+AgentLoop --> MessageBus
+
+' MCP and Chroma dependencies
+McpToolsServer --> ChromaCollection
+ChromaCollection --> LocalMindEmbeddingFunction
+
+note bottom of OpenAICompatProvider
+  <<inferencia local>>
+  Ollama :11434 · oMLX :8082
+  (host.docker.internal)
+end note
+
+LocalMindEmbeddingFunction ..> "Ollama/oMLX" : embeddings
+
+note right of McpToolsServer
+  Conceptual boundary
+  over backend/mcp_tools/server.py
+  Subproceso MCP vía stdio
+end note
+
+@enduml

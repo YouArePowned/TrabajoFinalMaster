@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160mm" height="90mm" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa conceptual de los servicios locales</title>
+  <desc id="desc">La inferencia, la recuperación documental, las sesiones, la memoria y las herramientas mantienen responsabilidades separadas; MCP permite generar PDF y artefactos locales, y las integraciones externas requieren consentimiento.</desc>
+  <defs>
+    <marker id="arrowStandard" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <marker id="arrowExternal" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#B45309"/></marker>
+    <marker id="arrowReturn" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>
+    <style><![CDATA[
+      text{font-family:Arial,Helvetica,sans-serif;fill:#0F172A}.title{font-size:44px;font-weight:700}.subtitle{font-size:30px;fill:#475569}
+      .agent{fill:#CFFAFE;stroke:#0E7490;stroke-width:7}.boundary{fill:#F8FAFC;stroke:#CBD5E1;stroke-width:6}
+      .inference{fill:#CFFAFE;stroke:#0E7490;stroke-width:6}.service{fill:#D1FAE5;stroke:#047857;stroke-width:6}
+      .memory{fill:#ECFDF5;stroke:#047857;stroke-width:6}.external{fill:#FEF3C7;stroke:#B45309;stroke-width:6;stroke-dasharray:16 10}
+      .nodeTitle{font-size:32px;font-weight:700;text-anchor:middle}.nodeStart{font-size:31px;font-weight:700}.body{font-size:30px;text-anchor:middle}.detail{font-size:30px;text-anchor:middle}.small{font-size:30px;text-anchor:middle;fill:#475569}
+      .arrow{fill:none;stroke:#475569;stroke-width:7;marker-end:url(#arrowStandard)}.bus{fill:none;stroke:#475569;stroke-width:7}.externalLink{fill:none;stroke:#B45309;stroke-width:7;stroke-dasharray:16 10;marker-end:url(#arrowExternal)}
+    ]]></style>
+  </defs>
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <text class="title" x="45" y="68">Servicios locales y responsabilidades persistentes</text>
+  <text class="subtitle" x="45" y="112">Cada componente resuelve una función distinta dentro del agente</text>
+
+  <rect class="agent" x="35" y="340" width="220" height="180" rx="24"/>
+  <text class="nodeTitle" x="145" y="407">Nanobot</text>
+  <text class="body" x="145" y="465">orquestación</text>
+
+  <rect class="boundary" x="330" y="145" width="870" height="665" rx="28"/>
+  <text class="subtitle" x="375" y="195">Servicios y datos locales</text>
+  <path class="bus" d="M380 277 V682"/>
+
+  <rect class="inference" x="420" y="225" width="720" height="105" rx="20"/>
+  <text class="nodeStart" x="455" y="287">Inferencia</text>
+  <text class="detail" x="920" y="270"><tspan x="920">Ollama u oMLX</tspan><tspan x="920" dy="36">modelos en el anfitrión</tspan></text>
+  <rect class="service" x="420" y="360" width="720" height="105" rx="20"/>
+  <text class="nodeStart" x="455" y="422">Recuperación RAG</text>
+  <text class="detail" x="920" y="405"><tspan x="920">embeddings locales</tspan><tspan x="920" dy="36">ChromaDB</tspan></text>
+  <rect class="memory" x="420" y="495" width="720" height="105" rx="20"/>
+  <text class="nodeStart" x="455" y="557">Sesiones y memoria</text>
+  <text class="detail" x="920" y="540"><tspan x="920">JSONL y Markdown</tspan><tspan x="920" dy="36">Engram opcional</tspan></text>
+  <rect class="service" x="420" y="630" width="720" height="105" rx="20"/>
+  <text class="nodeStart" x="455" y="692">Herramientas MCP</text>
+  <text class="detail" x="920" y="675"><tspan x="920">PDF y artefactos locales</tspan><tspan x="920" dy="36">acciones protegidas</tspan></text>
+
+  <rect class="external" x="1240" y="215" width="320" height="470" rx="24"/>
+  <text class="nodeTitle" x="1400" y="280"><tspan x="1400">Integraciones</tspan><tspan x="1400" dy="40">externas</tspan></text>
+  <text class="body" x="1400" y="395"><tspan x="1400">búsqueda web</tspan><tspan x="1400" dy="40">Context7</tspan><tspan x="1400" dy="65">desactivadas</tspan><tspan x="1400" dy="38">por defecto</tspan></text>
+  <text class="small" x="1400" y="600"><tspan x="1400">solo con activación</tspan><tspan x="1400" dy="34">o consentimiento</tspan></text>
+
+  <path class="bus" d="M255 430 H380"/>
+  <path class="arrow" d="M380 277 H420"/>
+  <path class="arrow" d="M380 412 H420"/>
+  <path class="arrow" d="M380 547 H420"/>
+  <path class="arrow" d="M380 682 H420"/>
+  <path class="externalLink" d="M1140 682 H1180 V515 H1240"/>
+</svg>

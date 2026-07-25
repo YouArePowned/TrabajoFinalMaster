@@ -1,0 +1,172 @@
+% arara: llmk: { clean: partial }
+% arara: clean: { extensions: [lol] }
+% arara: rmdir: { target: '_minted' }
+% arara: pdflatex: { shell: yes, interaction: nonstopmode }
+% arara: biber
+% arara: pdflatex: { shell: yes, interaction: nonstopmode, synctex: yes }
+% arara: pdflatex: { shell: yes, interaction: nonstopmode, synctex: on }
+% arara: llmk: { clean: partial }
+% arara: clean: { extensions: [lol] }
+% arara: rmdir: { target: '_minted' }
+\PassOptionsToPackage{figuresright}{rotating}
+\documentclass[twoside,spanish,a4paper,12pt]{tfg}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{enumitem} % Para opciones de listas
+\usepackage{tabularx}    % Para tablas ajustables
+\usepackage{siunitx}     % Para alineación de números
+\usepackage{booktabs}    % Para líneas mejoradas
+\usepackage{makecell}    % Para saltos de línea en celdas
+\usepackage{glossaries} % Si usas términos del glosario
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{rotating}
+
+\usepackage{minted}
+\usepackage{capt-of}
+\usepackage{geometry}
+
+\usepackage{placeins}     % para \FloatBarrier
+\usepackage{flafter}      % evita flotados atrás
+
+
+% Editar la titulación
+\titulacion{Máster Universitario en Tecnologías Web, \\ Computación en la Nube y Aplicaciones Móviles}
+
+% Editar el título
+\title{Asistente CoT-RAG multitarea optimizado para modelos locales}
+
+% Si es una alumna se debe usar
+% \authorlabel{Autora}
+\authorlabel{Autor}
+% Editar el nombre
+\author{Víctor Sanz García}
+
+
+% Si hay varios tutores:
+% \tutorlabel{Tutores}
+% \tutor{Nombre del tutor 1 \\[2mm] Nombre del turor2}
+% Si el tutor es masculino:
+\tutorlabel{Tutor}
+% Editar
+\tutor{Jose Ignacio Panach Navarrete}
+
+% Editar: Poner mes y año de la convocatoria de lectura del TFM
+\convocatoria{Julio 2026}
+
+\addbibresource{references.bib}
+
+\makeatletter
+
+\makenoidxglossaries
+\loadglsentries{tex/acronimos-terminos}
+
+\makeatletter
+
+\begin{document}
+
+% NO QUITAR ESTOS ELEMENTOS
+\portada
+\cleardoublepage
+\contraportada
+\cleardoublepage
+\declaracion
+\cleardoublepage
+
+
+% Editar: Resumen en Español (obligatorio)
+\begin{resumen}
+  Este \gls{tfm} presenta el diseño y desarrollo de un servicio de clúster que ejecuta un asistente de \gls{ia}, capaz de ofrecer automatización, multitarea y respuestas fundamentadas mediante \gls{cot}-\gls{rag} iterativo utilizando modelos \gls{llm} locales. El sistema propuesto incluye una interfaz web y móvil para interactuar con el bot, así como una guía de despliegue para su reproducción en local. La solución planteada destaca por su capacidad de operar con recursos limitados y su despliegue reproducible basado en contenedores.
+  El objetivo principal de este \gls{tfm} es ofrecer una solución funcional y optimizada para la integración de capacidades de razonamiento \gls{cot} y recuperación de información (\gls{rag}) con modelos locales, garantizando la privacidad de los datos.
+\end{resumen}
+\cleardoublepage
+
+% Editar: Resumen en Inglés
+\begin{abstract}
+  This \gls{tfm} presents the design and development of a cluster service running an \gls{ia} assistant, capable of offering automation, multitasking, and grounded responses through iterative \gls{cot}-\gls{rag} using local \gls{llm} models. The proposed system includes a web and mobile interface to interact with the bot, as well as a deployment guide for local reproduction. The proposed solution stands out for its capacity to operate with limited resources and its reproducible deployment based on containers. The main objective of this \gls{tfm} is to offer a functional and optimized solution for integrating \gls{cot} reasoning and information retrieval (\gls{rag}) capabilities with local models, ensuring data privacy.
+\end{abstract}
+\cleardoublepage
+
+% Editar: Resumen en Valenciano
+\begin{resum}
+  Aquest \gls{tfm} presenta el disseny i desenvolupament d\textquotesingle un servei de clúster que executa un assistent d\textquotesingle \gls{ia}, capaç d\textquotesingle oferir automatització, multitasca i respostes fonamentades mitjançant \gls{cot}-\gls{rag} iteratiu utilitzant models \gls{llm} locals. El sistema proposat inclou una interfície web i mòbil per a interactuar amb el bot, així com una guia de desplegament per a la seua reproducció en local. La solució plantejada destaca per la seua capacitat d\textquotesingle operar amb recursos limitats i el seu desplegament reproduïble basat en contenidors.
+  L\textquotesingle objectiu principal d\textquotesingle aquest \gls{tfm} és oferir una solució funcional i optimitzada per a la integració de capacitats de raonament \gls{cot} i recuperació d\textquotesingle informació (\gls{rag}) amb models locals, garantint la privacitat de les dades.
+\end{resum}
+\cleardoublepage
+
+
+% Editar: Agradecimientos (opcional)
+\begin{agradecimientos}
+  En primer lugar, deseo expresar mi más sincero agradecimiento a mi tutor, cuya guía, dedicación y apoyo han sido fundamentales durante todo el proceso de desarrollo de este Trabajo de Fin de Máster. Su compromiso y comprensión han sido clave para la culminación de este proyecto.
+  En segundo lugar, quiero agradecer profundamente a mi familia, por su constante respaldo en cada decisión que he tomado, su apoyo incondicional ha sido esencial para que pudiera dedicarme plenamente a la realización de estos estudios, que han supuesto una etapa muy significativa y enriquecedora para mí.
+  Por último, extiendo mi agradecimiento a la Universitat de València y al conjunto de docentes que me han acompañado a lo largo de este máster. Gracias a su dedicación y empeño, me siento plenamente preparado para consolidar mi trayectoria profesional como especialista en tecnologías web, computación en la nube y aplicaciones móviles.
+\end{agradecimientos}
+\cleardoublepage
+
+
+
+\tableofcontents
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
+\cleardoublepage
+\lstlistoflistings
+
+
+\pagestyle{tfg}
+\justify
+
+% Las figuras se buscan en el directorio figs
+
+% Cada capítulo está en su propio fichero tex. Ver el directorio tex.
+
+% La bibliografía está dentro del directorio bib
+\chapter{Introducción}
+\input{tex/introduccion.tex}
+
+\chapter{Estado del arte}\label{ch:estado-arte}
+\input{tex/estado_arte.tex}
+
+\chapter{Requisitos, especificaciones, coste, riesgos y viabilidad}\label{ch:requisitos}
+\input{tex/requisitos.tex}
+
+\chapter{Análisis}\label{ch:analisis}
+\input{tex/analisis.tex}
+
+\chapter{Diseño}\label{ch:diseno}
+% \input{tex/diseno.tex}
+
+\chapter{Implementación y pruebas}\label{ch:implementacion}
+% \input{tex/implementacion_pruebas.tex}
+
+\chapter{Conclusiones}
+% \input{tex/conclusiones.tex}
+
+\printbibliography[heading=bibnumbered, title={Bibliografía \label{chap:bibliography}}]
+
+
+\pagestyle{appendix}
+
+\appendix
+
+\chapter{Glosarios}
+%\addcontentsline{toc}{chapter}{Acrónimos}
+%\printnoidxglossary[type=\acronymtype, title=Acrónimos y abreviaciones, toctitle=Acrónimos y abreviaciones]
+\printnoidxglossary[type=\acronymtype, title=Acrónimos y abreviaciones]
+
+%\section{Términos}
+
+\printnoidxglossary[type=main,title=Términos]
+%\addcontentsline{toc}{chapter}{Glosario}
+%\printnoidxglossary[type=main,title=Términos, toctitle=Términos]
+
+% \input{tex/apendice.tex}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

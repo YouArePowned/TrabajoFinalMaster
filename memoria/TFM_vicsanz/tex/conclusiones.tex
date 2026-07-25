@@ -1,0 +1,99 @@
+% Contenidos del capítulo.
+% Las secciones presentadas son orientativas y no representan
+% necesariamente la organización que debe tener este capítulo.
+
+Este capítulo se estructura en tres apartados fundamentales. En primer lugar, se presenta un análisis comparativo entre la planificación inicial y los resultados obtenidos, tanto en términos de costes temporales como económicos, evaluando las posibles desviaciones respecto a las estimaciones realizadas durante la fase de planificación del proyecto. En segundo lugar, se lleva a cabo una evaluación y reflexión crítica sobre los resultados alcanzados tras la finalización del \gls{tfg}. Finalmente, se exponen una serie de líneas de mejora y elementos no abordados en el presente desarrollo, los cuales podrían ser considerados en futuros trabajos.
+
+\section{Revisión de costes}
+
+Al culminar un proyecto, es imprescindible reevaluar los costes reales que se han incurrido. Estos costes se clasifican en costes temporales y costes correspondientes al personal y recursos. En lo que respecta a los costes temporales, este \gls{tfg} tenía previsto un tiempo de desarrollo de entre 292 y 322 horas, incluyendo un 10\% adicional para imprevistos, y finalmente se completó en 294 horas. Esto es equivalente a 24 semanas y media o 5 meses y medio, comenzando el trabajo en enero y concluyéndolo a mediados de junio del año 2025. La estimación original consideraba una serie de riesgos y medidas para absorber posibles retrasos, y dado que el autor ya tenía el proyecto bastante adelantado antes de adoptarlo como \gls{tfg}, el tiempo de desarrollo final estuvo casi conforme a la predicción inicial.
+
+Entre los riesgos identificados, uno era la posible falta de integración entre el complemento de Blender, el proxy y la API desarrollada con Flask. Sin embargo, esta integración se completó dentro del tiempo previsto y se solucionaron todos los problemas de comunicación. Otro posible riesgo involucraba dificultades en la configuración de Docker y Docker Compose al momento de desplegar el clúster. Afortunadamente, la validación y depuración del despliegue se efectuaron suavemente ajustando los archivos de configuración dentro del plazo estimado. Además, existía el riesgo de fallos en la conversión de imágenes a modelos 3D. Para abordar esto, se hicieron ajustes en los hiperparámetros del modelo generativo TripoSR, como "Foreground Ratio", lo que resultó en modelos más nítidos sin excesivo ruido, respetando el tiempo asignado. Un riesgo más era el bajo rendimiento del modelo \gls{llm} utilizado. A pesar de partir de un modelo \gls{llm} destilado que ya ofrecía un buen rendimiento, se buscaron mejoras adicionales optimizando los parámetros de la imagen de Docker. Esto fue necesario ya que tener múltiples contenedores de modelos de \gls{ia} ejecutándose en paralelo con Docker Compose presentaba desafíos para mantener la estabilidad del rendimiento en el mismo equipo. Por último, entre los riesgos identificados durante el desarrollo del proyecto, destacan principalmente, la curva de aprendizaje asociada al uso de tecnologías y herramientas inicialmente desconocidas y por otro, la limitación de tiempo disponible debido a compromisos personales y académicos, como las prácticas profesionales, la carga lectiva del curso y las responsabilidades asumidas como delegado de 4.º del \gls{gim}. Estos factores finalmente no incrementaron en gran medida la finalización del \gls{tfg} respecto a la planificación inicial. En particular, la necesidad de adquirir conocimientos sobre la mayoría de las tecnologías utilizadas y en conjunto con la gestión simultánea de múltiples tareas ajenas al \gls{tfg}, representaron los riesgos más complejos de controlar, no obstante, se logró mantener estos factores bajo control, permitiendo que la duración del proyecto se mantuviera dentro del marco temporal previsto.
+
+En otro contexto, se encuentran los costes de personal. En esta área, se calculó un gasto de 4.711\texteuro\ para las 322 horas de trabajo previstas con un margen de error del 10\%, considerando un salario de 11\texteuro\ por hora. Dado que el proyecto en realidad se extendió más allá del mínimo estimado de 292 horas pero no superó el máximo pronosticado de 322 horas, podemos afirmar que se completó en el tiempo previsto, alcanzando finalmente las 294 horas. Por lo tanto, es necesario recalcular los costes de personal basados en estas 294 horas, manteniendo la jornada laboral semanal original de 12 horas, resultando en un costo real de personal de 4.302\texteuro para el proyecto.
+
+El segundo gasto a considerar es el referente a los materiales. Es necesario recalcular la amortización de cada material cuando se reduce el tiempo de utilización en el proyecto empleando otra vez la Fórmula \ref{eq:costematerial}. La Tabla~\ref{tab:coste_amortizacion_real} muestra el costo actualizado de amortización y el costo total de materiales para el proyecto.
+% Tabla datos de costos y amortización de dispositivos
+\begin{table}[H]
+   \centering
+   \begin{tabular}{|>{\centering\arraybackslash}p{4cm}|c|c|c|}
+      \hline
+      \textbf{Elemento}                             & \textbf{Coste}     & \textbf{Meses de utilización} & \textbf{Coste de Amortización} \\ \hline
+      Ordenador portátil MSI Pulse GL66 12UEK-085ES & 1.340,00 \texteuro & 5,64                          & 157,45 \texteuro               \\ \hline
+   \end{tabular}
+   \caption{Datos de costes y amortización de dispositivos al finalizar el proyecto}
+   \label{tab:coste_amortizacion_real}
+\end{table}
+
+
+En conclusión, la Tabla~\ref{tab:costos_reales} presenta el costo total de cada activo empleado en el proyecto, abarcando materiales, equipos de desarrollo y personal. Al final, se logró una reducción en los costes de 510,90\texteuro\ en comparación con lo previsto, esto se debe a que los costes estimados estaban calculados incluyendo un 10\% adicional de tiempo para imprevistos y finalmente se acabó empleando menos de ese tiempo adicional.
+% Tabla desglose de costos
+\begin{table}[H]
+   \centering
+   \begin{tabular}{|>{\centering\arraybackslash}p{8cm}|>{\centering\arraybackslash}p{3cm}|}
+      \hline
+      \textbf{Elemento}                                & \textbf{Coste (\texteuro)}  \\
+      \hline
+      Amortización portátil MSI Pulse GL66 12UEK-085ES & 157,45 \texteuro            \\
+      \hline
+      Recursos humanos                                 & 4.302,00 \texteuro          \\
+      \hline
+      \textbf{Total costes directos}                   & 4.459,45 \texteuro          \\
+      \hline
+      \textbf{OverHead costes indirectos (20\%)}       & 891,89 \texteuro            \\
+      \hline
+      \textbf{Total}                                   & \textbf{5.351,34 \texteuro} \\
+      \hline
+   \end{tabular}
+   \caption{Desglose de costes al finalizar el proyecto}
+   \label{tab:costos_reales}
+\end{table}
+
+\section{Conclusiones}
+
+El presente \gls{tfg} ha tenido como objetivo el diseño e implementación de un complemento funcional para Blender, construido sobre una arquitectura de microservicios y desplegado mediante Docker Compose. La solución desarrollada integra tanto un modelo \gls{llm} utilizando Ollama, como un servicio personalizado de generación 3D a partir de imágenes, ambos accesibles a través de un proxy y de una API implementada con Flask.
+
+Durante la fase inicial, se realizó un análisis comparativo entre distintas tecnologías de virtualización con contenedores (Docker, Docker Compose) y frameworks de microservicios, concluyendo con la adopción de Flask por su ligereza y facilidad de integración. Esta elección permitió garantizar tanto la portabilidad de la solución como el aislamiento de sus dependencias.
+
+El proceso de implementación integró de forma efectiva competencias adquiridas en diversas asignaturas del grado. Los conocimientos de Bases de Datos y Sistemas de Información resultaron esenciales para la gestión de los metadatos de configuración, mientras que los contenidos abordados en Programación Hipermedia facilitaron la automatización de scripts de despliegue. Por su parte, las asignaturas de Redes Multimedia y Fundamentos de Redes de Computadores proporcionaron la base teórica y práctica para el diseño de la red interna utilizada en el entorno de Docker. El desarrollo del cliente API en Python fue posible gracias a la formación en Programación, y el diseño funcional del add-on se apoyó en los principios adquiridos en la asignatura de Animación.
+
+La fase de análisis se apoyó en técnicas propias de la Ingeniería del Software, mediante las cuales se definieron los casos de uso y se elaboraron los diagramas de secuencia y clases, los cuales sirvieron como base para el diseño detallado de los componentes, interfaces y arquitectura de despliegue. La planificación temporal y presupuestaria fue respaldada por el uso de diagramas de Gantt y técnicas de gestión de proyectos adquiridas en la propia asignatura de Gestión de Proyectos del grado.
+
+En cuanto a la validación del sistema, se aplicó una estrategia de pruebas estructurada que incluyó tanto pruebas unitarias (en forma de caja blanca) como pruebas de integración y funcionales (caja negra), verificando así el cumplimiento de los requisitos establecidos.
+
+Finalmente, la fase de implementación no solo permitió consolidar conocimientos previos, sino que también facilitó la adquisición de nuevas competencias en tecnologías como Flask, Docker, Docker Compose y en orquestación de servicios de \gls{ia}. Los resultados obtenidos confirman que el add-on desarrollado constituye una herramienta útil para optimizar los flujos de trabajo en Blender, especialmente en tareas que involucran automatización y generación asistida por IA.
+
+\section{Trabajo futuro}
+
+A lo largo del desarrollo de este \gls{tfg}, han emergido varias líneas de mejora e investigación que, aunque no se abordan dentro del alcance de los objetivos actuales, son propuestas valiosas para futuras ampliaciones del complemento de Blender. A continuación, se detallan estas ideas que podrían emprenderse en proyectos futuros, utilizando la plataforma ya establecida:
+
+\begin{itemize}
+   \item \textbf{Despliegue de un clúster para servicios IA}
+
+         Plantear el uso de orquestadores como Kubernetes para escalar dinámicamente las réplicas de los servicios \gls{llm} y 3D, distribuyendo la carga entre múltiples nodos y mejorando la tolerancia a fallos.
+   \item \textbf{Integración con repositorios de prompts}
+
+         Diseñar una base de datos colaborativa o un sistema de versionado (por ejemplo Git) para almacenar, compartir y valorar prompts de generación de código y de modelos 3D, facilitando su reutilización y mejora continua.
+   \item \textbf{Optimización automática de prompts}
+
+         Investigar algoritmos de refuerzo o aprendizaje supervisado que ajusten de forma iterativa los parámetros de entrada (prompts, hiperparámetros del modelo) para maximizar la calidad del código generado y la fidelidad geométrica del modelo 3D.
+   \item \textbf{Vista previa en tiempo real}
+
+         Desarrollar un mecanismo de streaming de resultados parciales desde los microservicios a Blender, permitiendo al usuario visualizar avances en la generación de la malla 3D mientras el proceso aún está en ejecución.
+   \item \textbf{Soporte de múltiples back-ends de IA}
+
+         Ampliar la arquitectura para incorporar otros proveedores \gls{llm} (locales o en la nube) y distintos motores de generación 3D.
+   \item \textbf{Página Web propia del Add-on}
+
+         Desarrollar un sitio web donde se detalle el funcionamiento e instalación del complemento y se ofrezca acceso para probar los modelos de \gls{ia} directamente en el mismo sitio web.
+   \item \textbf{Dashboard de métricas y monitorización}
+
+         Crear un panel web que recoja estadísticas de uso (tiempos de respuesta, aciertos del modelo, fallos), monitorice el estado de los contenedores y alerte ante cuellos de botella o errores en los servicios.
+   \item \textbf{Pruebas de usabilidad con usuarios finales}
+
+         Realizar estudios formales de ergonomía y experiencia de usuario para evaluar la facilidad de uso del add-on, identificar puntos de mejora en la interfaz y validar la adopción en flujos de trabajo profesionales.
+   \item \textbf{Extensión a otros formatos de exportación}
+
+         Incorporar la función de exportar modelos 3D no solo en formato .glb, sino también en otros formatos adicionales.
+\end{itemize}
+

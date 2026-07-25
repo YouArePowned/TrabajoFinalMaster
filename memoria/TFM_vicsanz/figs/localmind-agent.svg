@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160mm" height="90mm" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa conceptual de la capa de aplicación y orquestación</title>
+  <desc id="desc">Nanobot vincula la petición con una sesión y selecciona inferencia, recuperación documental o una herramienta antes de emitir una respuesta incremental.</desc>
+  <defs>
+    <marker id="arrowStandard" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <marker id="arrowExternal" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#B45309"/></marker>
+    <marker id="arrowReturn" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1D4ED8"/></marker>
+    <style><![CDATA[
+      text{font-family:Arial,Helvetica,sans-serif;fill:#0F172A}.title{font-size:44px;font-weight:700}.subtitle{font-size:30px;fill:#475569}
+      .client{fill:#DBEAFE;stroke:#1D4ED8;stroke-width:6}.session{fill:#E0E7FF;stroke:#4338CA;stroke-width:6}
+      .agent{fill:#CFFAFE;stroke:#0E7490;stroke-width:7}.decision{fill:#FFFFFF;stroke:#0E7490;stroke-width:6}
+      .service{fill:#D1FAE5;stroke:#047857;stroke-width:6}.protected{fill:#FEF3C7;stroke:#B45309;stroke-width:5}
+      .response{fill:#DBEAFE;stroke:#1D4ED8;stroke-width:7}.nodeTitle{font-size:32px;font-weight:700;text-anchor:middle}
+      .body{font-size:30px;text-anchor:middle}.small{font-size:30px;text-anchor:middle;fill:#475569}
+      .arrow{fill:none;stroke:#475569;stroke-width:7;marker-end:url(#arrowStandard)}.bus{fill:none;stroke:#475569;stroke-width:7}.protectedLink{fill:none;stroke:#B45309;stroke-width:7;marker-end:url(#arrowExternal)}
+    ]]></style>
+  </defs>
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+  <text class="title" x="45" y="68">Aplicación y orquestación de una petición</text>
+  <text class="subtitle" x="45" y="112">Progreso resumido requerido; su cumplimiento permanece pendiente de validación</text>
+
+  <rect class="client" x="20" y="335" width="170" height="165" rx="22"/>
+  <text class="nodeTitle" x="105" y="395">Petición</text>
+  <text class="body" x="105" y="450">del cliente</text>
+  <rect class="session" x="230" y="335" width="190" height="165" rx="22"/>
+  <text class="nodeTitle" x="325" y="395">Sesión</text>
+  <text class="body" x="325" y="435"><tspan x="325">contexto</tspan><tspan x="325" dy="38">identificador</tspan></text>
+  <rect class="agent" x="445" y="305" width="230" height="225" rx="26"/>
+  <text class="nodeTitle" x="560" y="380">Nanobot</text>
+  <text class="body" x="560" y="415"><tspan x="560">coordina</tspan><tspan x="560" dy="38">modelo</tspan><tspan x="560" dy="38">y herramientas</tspan></text>
+
+  <polygon class="decision" points="830,295 960,417 830,540 700,417"/>
+  <text class="nodeTitle" x="830" y="397"><tspan x="830">Capacidad</tspan><tspan x="830" dy="42">necesaria</tspan></text>
+
+  <rect class="service" x="1000" y="165" width="300" height="150" rx="22"/>
+  <text class="nodeTitle" x="1150" y="222">Inferencia local</text>
+  <text class="body" x="1150" y="275">Ollama / oMLX</text>
+  <rect class="service" x="1000" y="350" width="300" height="150" rx="22"/>
+  <text class="nodeTitle" x="1150" y="400"><tspan x="1150">Recuperación</tspan><tspan x="1150" dy="37">RAG</tspan></text>
+  <text class="body" x="1150" y="475">ChromaDB</text>
+  <rect class="service" x="1000" y="535" width="300" height="165" rx="22"/>
+  <text class="nodeTitle" x="1150" y="590">Herramienta MCP</text>
+  <text class="body" x="1150" y="642"><tspan x="1150">acción</tspan><tspan x="1150" dy="38">parametrizada</tspan></text>
+  <rect class="protected" x="995" y="735" width="310" height="105" rx="18"/>
+  <text class="body" x="1150" y="777"><tspan x="1150">confirmación previa</tspan><tspan x="1150" dy="38">acciones protegidas</tspan></text>
+
+  <rect class="response" x="1370" y="285" width="200" height="330" rx="24"/>
+  <text class="nodeTitle" x="1470" y="350"><tspan x="1470">Respuesta</tspan><tspan x="1470" dy="42">incremental</tspan></text>
+  <text class="body" x="1470" y="455"><tspan x="1470">contenido</tspan><tspan x="1470" dy="38">progreso</tspan><tspan x="1470" dy="38">herramientas</tspan><tspan x="1470" dy="38">errores</tspan></text>
+
+  <path class="arrow" d="M190 417 H230"/>
+  <path class="arrow" d="M420 417 H445"/>
+  <path class="arrow" d="M675 417 H700"/>
+  <path class="bus" d="M960 417 H975 M975 240 V617"/>
+  <path class="arrow" d="M975 240 H1000"/>
+  <path class="arrow" d="M975 417 H1000"/>
+  <path class="arrow" d="M975 617 H1000"/>
+  <path class="bus" d="M1300 240 H1330 M1300 425 H1330 M1300 617 H1330 M1330 240 V617"/>
+  <circle cx="1330" cy="425" r="9" fill="#475569"/>
+  <path class="arrow" d="M1330 425 H1370"/>
+  <path class="protectedLink" d="M1150 700 V735"/>
+</svg>

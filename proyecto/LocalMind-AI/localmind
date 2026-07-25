@@ -1,0 +1,109 @@
+#!/bin/bash
+VENV_DIR="$HOME/.localmind/venv"
+BACKEND_TYPE="mlx"
+SELECTED_MODEL="mlx-community/Ornith-1.0-9B-4bit"
+PORT="8082"
+RED='[38;2;235;111;146m'
+GREEN='[38;2;156;207;216m'
+YELLOW='[38;2;241;202;147m'
+BLUE='[38;2;49;116;143m'
+LAVENDER='[38;2;196;167;231m'
+MAUVE='[38;2;235;188;186m'
+BOLD='[1m'
+NC='[0m'
+
+show_help() {
+    echo -e "${LAVENDER}${BOLD}LocalMind-AI Control Utility${NC}"
+    echo -e "Uso: ./localmind [comando]\n"
+    echo -e "Comandos disponibles:"
+    echo -e "  ${GREEN}start${NC}    -> Inicia el LLM local nativo y el agente en Docker"
+    echo -e "  ${RED}stop${NC}     -> Detiene todos los servicios (host + Docker)"
+    echo -e "  ${BLUE}status${NC}   -> Muestra el estado del LLM del host y el agente en Docker"
+    echo -e "  ${LAVENDER}web${NC}      -> Inicia el frontend web en http://localhost:8081"
+    echo -e "  ${YELLOW}config${NC}   -> Vuelve a lanzar el configurador interactivo"
+    echo -e "  ${MAUVE}help${NC}     -> Muestra esta ayuda"
+}
+
+start_services() {
+    echo -e "${BLUE}Iniciando servicios de LocalMind-AI...${NC}"
+    case $BACKEND_TYPE in
+        "ollama")
+            if ! lsof -i :11434 &> /dev/null; then
+                echo -e "${YELLOW}Iniciando Ollama nativo...${NC}"
+                if [ "$(uname -s)" = "Darwin" ]; then open -a Ollama; else sudo systemctl start ollama; fi
+                sleep 3
+            fi
+            echo -e "${GREEN}✔ Ollama está activo en el host.${NC}"
+            ;;
+        "mlx")
+            if ! lsof -i :8082 &> /dev/null; then
+                echo -e "${YELLOW}Iniciando servidor Apple MLX/oMLX en puerto 8082...${NC}"
+                if command -v omlx &> /dev/null; then
+                    omlx serve --model-dir ~/models --port 8082 --memory-guard aggressive --paged-ssd-cache-dir ~/.omlx/cache --hot-cache-max-size 20% > /tmp/omlx_server.log 2>&1 &
+                else
+                    "$VENV_DIR/bin/mlx_lm.server" --model "$SELECTED_MODEL" --port 8082 > /tmp/mlx_lm_server.log 2>&1 &
+                fi
+                sleep 5
+            fi
+            echo -e "${GREEN}✔ Servidor MLX/oMLX está activo en puerto 8082.${NC}"
+            ;;
+    esac
+    echo -e "${BLUE}Iniciando contenedores Docker...${NC}"
+    docker compose up -d
+    echo -e "${GREEN}✔ Agente en Docker iniciado correctamente.${NC}"
+}
+
+stop_services() {
+    echo -e "${RED}Deteniendo servicios de LocalMind-AI...${NC}"
+    docker compose down
+    if [ "$BACKEND_TYPE" = "mlx" ]; then
+        pkill -f "omlx-server"
+        pkill -f "mlx_lm.server"
+        pkill -f "omlx serve"
+        echo -e "${GREEN}✔ Servidor MLX/oMLX detenido.${NC}"
+    elif [ "$BACKEND_TYPE" = "ollama" ]; then
+        echo -e "${YELLOW}Ollama nativo continuará en segundo plano (puedes cerrarlo desde la barra de estado).${NC}"
+    fi
+}
+
+show_status() {
+    echo -e "${LAVENDER}${BOLD}Estado del Sistema LocalMind-AI:${NC}"
+    llm_running=0
+    case $BACKEND_TYPE in
+        "ollama")
+            if curl -sf http://127.0.0.1:11434 &> /dev/null; then llm_running=1; fi
+            ;;
+        "mlx")
+            if pgrep -f "mlx_lm.server" &> /dev/null || pgrep -f "omlx-server" &> /dev/null || pgrep -f "omlx serve" &> /dev/null || lsof -i :8082 &> /dev/null; then llm_running=1; fi
+            ;;
+    esac
+    if [ $llm_running -eq 1 ]; then
+        echo -e "  Motor LLM ($BACKEND_TYPE): ${GREEN}ACTIVO (Puerto $PORT)${NC}"
+        echo -e "  Modelo: ${BOLD}$SELECTED_MODEL${NC}"
+    else
+        echo -e "  Motor LLM ($BACKEND_TYPE): ${RED}INACTIVO${NC}"
+    fi
+    if docker compose ps | grep -q "Up"; then
+        echo -e "  Agente y Frontend (Docker): ${GREEN}ACTIVO (Nanobot 8765/8900 | Web 8081)${NC}"
+    else
+        echo -e "  Agente y Frontend (Docker): ${RED}INACTIVO${NC}"
+    fi
+}
+
+case "$1" in
+    start) start_services ;;
+    stop) stop_services ;;
+    status) show_status ;;
+    web)
+        echo -e "${BLUE}Abriendo frontend web en http://localhost:8081...${NC}"
+        if [ "$(uname -s)" = "Darwin" ]; then
+            open "http://localhost:8081"
+        elif command -v xdg-open &> /dev/null; then
+            xdg-open "http://localhost:8081"
+        else
+            echo -e "${GREEN}Accede al frontend en: http://localhost:8081${NC}"
+        fi
+        ;;
+    config) bash localmind-cli/install.sh ;;
+    *) show_help ;;
+esac

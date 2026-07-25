@@ -1,0 +1,10 @@
+<map id="diagrama-secuencia-general_map" name="diagrama-secuencia-general_map">
+<area shape="rect" id="id1" href="Aceptar" title="Aceptar" alt="" coords="167,1837,235,1858"/>
+<area shape="rect" id="id2" href="Siempre" title="Siempre" alt="" coords="54,2161,126,2181"/>
+<area shape="rect" id="id3" href="Rechazar" title="Rechazar" alt="" coords="54,1954,135,1975"/>
+<area shape="rect" id="id4" href="RAG" title="RAG" alt="" coords="1788,497,1873,517"/>
+<area shape="rect" id="id5" href="herramienta" title="herramienta" alt="" coords="159,1662,245,1682"/>
+<area shape="rect" id="id6" href="ChromaDB" title="ChromaDB" alt="" coords="54,2964,175,2984"/>
+<area shape="rect" id="id7" href="Motor" title="Motor" alt="" coords="167,2618,409,2638"/>
+<area shape="rect" id="id8" href="LLM" title="LLM" alt="" coords="136,1532,378,1553"/>
+</map>

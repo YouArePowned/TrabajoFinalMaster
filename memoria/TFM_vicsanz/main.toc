@@ -1,0 +1,61 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{23}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducción}{23}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Agentes de IA y Arquitecturas de Razonamiento}{23}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Entornos de Ejecución Local y Privacidad de Datos}{26}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Modelos de Lenguaje, Recuperación Aumentada y Herramientas Externas}{28}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Motivación}{30}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objetivos}{31}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Objetivos Específicos y Retos Técnicos}{31}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Metodología de Desarrollo}{32}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Organización de la Memoria}{32}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Estado del arte}{35}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Análisis de tecnologías y proyectos similares para agentes de IA locales}{35}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Think-Anywhere}{35}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Google AI Edge Gallery}{38}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}TinyAgent}{38}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Self-RAG}{41}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Conclusiones}{42}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Evaluación de tecnologías para el desarrollo del TFM}{42}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Hardware}{42}{subsection.2.2.1}%
+\contentsline {subsubsection}{Ordenadores de desarrollo y validación}{42}{section*.14}%
+\contentsline {paragraph}{OMEN by HP 15-ce033ns.}{43}{section*.15}%
+\contentsline {paragraph}{MSI Pulse GL66 12UEK-085ES.}{43}{section*.16}%
+\contentsline {paragraph}{MacBook Air M4.}{43}{section*.17}%
+\contentsline {subsection}{\numberline {2.2.2}Infraestructura, virtualización y despliegue}{44}{subsection.2.2.2}%
+\contentsline {subsubsection}{Sistemas operativos anfitriones}{44}{section*.18}%
+\contentsline {subsubsection}{Tecnologías de gestión de contenedores}{44}{section*.19}%
+\contentsline {subsubsection}{Orquestación del despliegue con Docker Compose}{44}{section*.24}%
+\contentsline {subsection}{\numberline {2.2.3}Software}{47}{subsection.2.2.3}%
+\contentsline {subsubsection}{Lenguajes de programación}{47}{section*.25}%
+\contentsline {subsubsection}{Cliente web}{48}{section*.27}%
+\contentsline {subsubsection}{API y comunicación}{48}{section*.29}%
+\contentsline {subsubsection}{Instalador y configurador TUI}{49}{section*.30}%
+\contentsline {subsubsection}{Software de inferencia local}{49}{section*.32}%
+\contentsline {subsubsection}{Modelos de IA generativa}{50}{section*.33}%
+\contentsline {subsubsection}{Recuperación, memoria y herramientas}{50}{section*.35}%
+\contentsline {subsection}{\numberline {2.2.4}Entorno de desarrollo, gestión de versiones y diseño de diagramas}{51}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Conclusiones}{52}{subsection.2.2.5}%
+\contentsline {chapter}{\numberline {3}Requisitos, especificaciones, coste, riesgos y viabilidad}{55}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requisitos}{55}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Requisitos funcionales}{55}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Requisitos no funcionales}{56}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Especificaciones}{58}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Costes}{61}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Riesgos}{66}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Viabilidad}{68}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Viabilidad legal}{68}{subsection.3.5.1}%
+\contentsline {chapter}{\numberline {4}Análisis}{71}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Diagrama de casos de uso}{71}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Diagrama general de secuencia del sistema}{81}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Diagrama de clases general}{83}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Diagramas de actividades más relevantes del análisis}{84}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Protocolo CoT-RAG}{84}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Ciclo de vida y comunicación del WebSocket}{86}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Diseño}{89}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Implementación y pruebas}{91}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{93}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Bibliografía }{95}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Glosarios}{103}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Acrónimos y abreviaciones}{103}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Términos}{104}{section.Alph1.2}%

@@ -1,0 +1,28 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparación de sistemas y métodos relacionados con LocalMind-AI.}}{36}{table.caption.9}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Lenguajes empleados y componentes asociados en LocalMind-AI.}}{47}{table.caption.26}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Tecnologías seleccionadas para el desarrollo y la validación de LocalMind-AI.}}{53}{table.caption.38}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Horario semanal de dedicación al \gls {tfm}.}}{62}{table.caption.44}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Estimación de tareas del proyecto mediante la técnica PERT.}}{63}{table.caption.45}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Valoración y amortización de los equipos utilizados.}}{65}{table.caption.47}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Desglose de costes del proyecto.}}{66}{table.caption.48}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Análisis de riesgos, costes temporales y medidas de contingencia.}}{67}{table.caption.49}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Licencias y condiciones de las tecnologías empleadas.}}{70}{table.caption.50}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces CU1. Iniciar conversación.}}{72}{table.caption.52}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces CU2. Enviar mensaje y recibir respuesta en streaming CoT.}}{73}{table.caption.53}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces CU3. Cambiar modelo \gls {llm}.}}{74}{table.caption.54}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces CU4. Indexar documento en base de conocimiento.}}{75}{table.caption.55}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces CU5. Buscar en base de conocimiento (\gls {rag}).}}{76}{table.caption.56}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces CU6. Generar reporte \gls {pdf}.}}{77}{table.caption.57}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces CU7. Ejecutar herramienta con confirmación.}}{78}{table.caption.58}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces CU8. Detener generación (\texttt {/stop}).}}{79}{table.caption.59}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces CU9. Instalar y configurar sistema.}}{80}{table.caption.60}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

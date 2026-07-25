@@ -1,0 +1,947 @@
+
+\newacronym{tfg}{TFG}{Trabajo Fin de Grado}
+\newacronym{gim}{GIM}{Grado en Ingeniería Multimedia}
+\newacronym{tic}{TIC}{Tecnologías de la Información y la Comunicación}
+\newacronym{pymes}{PYMES}{Pequeñas y medianas empresas}
+\newacronym{api}{API}{Interfaz de Programación de Aplicaciones}
+\newacronym{ia}{IA}{Inteligencia Artificial}
+\newacronym{saas}{SaaS}{Software as a Service}
+\newacronym{paas}{PaaS}{Platform as a Service}
+\newacronym{iaas}{IaaS}{Infrastructure as a Service}
+\newacronym{etse}{ETSE-UV}{Escuela Técnica Superior de Ingeniería}
+\newacronym{uveg}{UV}{Universitat de València}
+\newacronym{tfm}{TFM}{Trabajo Fin de Máster}
+\newacronym{html}{HTML}{HyperText Markup Language}
+\newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{rest}{REST}{Representational State Transfer}
+\newacronym{tls}{TLS}{Transport Layer Security}
+\newacronym[\glsshortpluralkey=SSGGBBDD]{sgbd}{SGBD}{Sistema de Gestión de Base de Datos}
+\newacronym{nist}{NIST}{National Institute of Standards and Technology}
+\newacronym{iclr}{ICLR}{International Conference on Learning Representations}
+\newacronym{emnlp}{EMNLP}{Empirical Methods in Natural Language Processing}
+\newacronym{owasp}{OWASP}{Open Web Application Security Project}
+\newacronym{pep8}{PEP 8}{Python Enhancement Proposal 8}
+\newacronym{pdf}{PDF}{Portable Document Format}
+\newacronym{iso25010}{ISO/IEC 25010}{Estándar internacional para la evaluación de la calidad de software}
+\newacronym{cuda}{CUDA}{Compute Unified Device Architecture}
+\newacronym{ram}{RAM}{Random Access Memory}
+\newacronym{vram}{VRAM}{Video Random Access Memory}
+
+\newglossaryentry{windows}{
+    name={Windows},
+    description={Sistema operativo desarrollado por Microsoft ampliamente utilizado en entornos personales y corporativos.}
+}
+\newglossaryentry{linux}{
+    name={Linux},
+    description={Familia de sistemas operativos de código abierto basados en el núcleo Linux.}
+}
+
+\newglossaryentry{solid}{
+    name={SOLID},
+    description={Conjunto de cinco principios de diseño orientado a objetos para desarrollar software legible y mantenible.}
+}
+\newglossaryentry{fastapi}{
+    name={FastAPI},
+    description={Framework web asíncrono de alto rendimiento para Python con validación automática de datos y soporte OpenAPI.}
+}
+\newglossaryentry{nginx}{
+    name={Nginx},
+    description={Servidor web HTTP de alto rendimiento, proxy inverso y balanceador de carga de código abierto.}
+}
+\newglossaryentry{markdown}{
+    name={Markdown},
+    description={Lenguaje de marcado ligero sencillo utilizado para dar formato estructurado a texto plano.}
+}
+\newglossaryentry{mlx}{
+    name={MLX},
+    description={Framework de aprendizaje automático diseñado por Apple para optimizar la ejecución de modelos en procesadores Apple Silicon.}
+}
+
+
+\newdualentry{html5}{HTML5}{HyperText Markup Language 5.0}{Ultima versión de \Gls{html}}
+
+\newglossaryentry{middleware}{
+    name={Middleware},
+    description={Software que se encuentra entre el sistema operativo y las aplicaciones que funcionan sobre él.}
+}
+\newglossaryentry{cloudcomputing}{
+    name={Cloud Computing},
+    description={Modelo de computación basado en el uso de recursos y servicios proporcionados a través de internet.}
+}
+\newglossaryentry{escalabilidad}{
+    name={Escalabilidad},
+    description={Capacidad de un sistema para manejar incrementos en la carga de trabajo aumentando los recursos disponibles.}
+}
+\newglossaryentry{virtualizacion}{
+    name={Virtualización},
+    description={Tecnología que permite crear versiones virtuales de recursos físicos como servidores y almacenamiento.}
+}
+\newglossaryentry{add-on}{
+    name={Add-on},
+    description={Componente ya sea hardware o software, que mejore las capacidades o el rendimiento de un equipo informático.}
+}
+\newglossaryentry{blender}{
+    name={Blender},
+    description={Software que en principio se asocia al contenido 3D, pero que realmente permite hacer prácticamente de todo, como 2D, animación, edición de vídeo, programación interna, etc.}
+}
+
+% Modelos de despliegue cloud
+% Añade estas líneas al glosario en el preámbulo
+\newglossaryentry{aws}{
+    name=AWS,
+    description={Amazon Web Services, plataforma líder de cloud computing pública}
+}
+
+\newglossaryentry{azure}{
+    name=Azure,
+    description={Plataforma de cloud computing de Microsoft}
+}
+
+\newglossaryentry{gcp}{
+    name=GCP,
+    description={Google Cloud Platform, suite de servicios en la nube de Google}
+}
+
+\newglossaryentry{sla}{
+    name=SLA,
+    description={Acuerdo de Nivel de Servicio (Service Level Agreement)},
+    first={Acuerdo de Nivel de Servicio (SLA)}
+}
+
+\newglossaryentry{vmware}{
+    name=VMware,
+    description={Empresa especializada en software de virtualización y gestión cloud}
+}
+
+% \newacronym{iaas}{
+%     name=IaaS,
+%     description={Infraestructura como Servicio (Infrastructure as a Service)},
+%     first={Infraestructura como Servicio (IaaS)}
+% }
+
+% Inteligencia artificial
+\newglossaryentry{ml}{
+    name=Machine Learning,
+    description={Paradigma de IA que permite a sistemas aprender patrones de datos sin programación explícita}
+}
+
+\newglossaryentry{dl}{
+    name=Deep Learning,
+    description={Subcampo de ML que utiliza redes neuronales con múltiples capas},
+    first={Aprendizaje Profundo (Deep Learning, DL)}
+}
+
+\newglossaryentry{rl}{
+    name=RL,
+    description={Aprendizaje por Refuerzo (Reinforcement Learning)},
+    first={Aprendizaje por Refuerzo (RL)}
+}
+
+\newglossaryentry{cnn}{
+    name=CNN,
+    description={Red Neuronal Convolucional (Convolutional Neural Network)},
+    first={Red Neuronal Convolucional (CNN)}
+}
+
+\newglossaryentry{gan}{
+    name=GAN,
+    description={Red Generativa Antagónica (Generative Adversarial Network)},
+    first={Red Generativa Antagónica (GAN)}
+}
+
+\newglossaryentry{llm}{
+    name=LLM,
+    description={Modelo de Lenguaje Grande (Large Language Model)},
+    first={Large Language Model (LLM)}
+}
+
+\newglossaryentry{baremetal}{
+    name=Bare Metal,
+    description={Servidor físico sin capa de virtualización, utilizado directamente}
+}
+
+\newglossaryentry{cdn}{
+    name=CDN,
+    description={Red de distribución de contenidos (Content Delivery Network)},
+    first={Red de Distribución de Contenidos (CDN)}
+}
+
+\newglossaryentry{sdn}{
+    name=SDN,
+    description={Red definida por software (Software-Defined Networking)},
+    first={Red Definida por Software (SDN)}
+}
+
+\newglossaryentry{wan}{
+    name=WAN,
+    description={Red de área amplia (Wide Area Network)},
+    first={Red de Área Amplia (WAN)}
+}
+
+\newglossaryentry{oss}{
+    name=Open Source,
+    description={Software con código fuente accesible y modificable públicamente}
+}
+
+\newglossaryentry{hf}{
+    name=Hugging Face,
+    description={Plataforma colaborativa de modelos de IA de código abierto}
+}
+
+\newglossaryentry{ollama}{
+    name=Ollama,
+    description={Framework para ejecutar modelos de lenguaje localmente}
+}
+
+\newglossaryentry{omlx}{
+    name=oMLX,
+    description={Servidor de inferencia de modelos de lenguaje optimizado para Apple Silicon}
+}
+
+\newglossaryentry{docker}{
+    name=Docker,
+    description={Plataforma de contenerización para empaquetar aplicaciones}
+}
+
+\newglossaryentry{wsl2}{
+    name=WSL2,
+    description={Subsistema de Windows para Linux, versión 2}
+}
+
+\newglossaryentry{flask}{
+    name=Flask,
+    description={Framework web minimalista para Python}
+}
+
+% \newglossaryentry{rest}{
+%     name=REST,
+%     description={Estilo arquitectónico para sistemas distribuidos}
+% }
+
+\newglossaryentry{sdk}{
+    name=SDK,
+    description={Kit de Desarrollo de Software (Software Development Kit)}
+}
+
+\newglossaryentry{dockercompose}{
+    name=Docker Compose,
+    description={Herramienta para definir y gestionar aplicaciones multi-contenedor en Docker mediante archivos YAML},
+    first={Docker Compose},
+    text={docker-compose}
+}
+
+\newglossaryentry{python}{
+    name=Python,
+    description={Lenguaje de programación interpretado, de alto nivel y multiparadigma, que enfatiza la legibilidad del código. Es ampliamente utilizado en desarrollo web, análisis de datos, inteligencia artificial y automatización, entre otras áreas.}
+}
+
+\newglossaryentry{requisitosfuncionales}{
+    name={requisitos funcionales},
+    description={Características y funciones específicas que debe cumplir la aplicación o sistema a desarrollar.}
+}
+
+\newglossaryentry{requisitosnofuncionales}{
+    name={requisitos no funcionales},
+    description={Criterios de calidad, rendimiento y seguridad que debe satisfacer la aplicación, sin estar directamente relacionados con funciones específicas.}
+}
+
+\newglossaryentry{casosdeuso}{
+    name={casos de uso},
+    description={Escenarios que describen cómo interactuarán los usuarios con el sistema.}
+}
+
+\newglossaryentry{sistema}{
+    name={sistema},
+    description={Conjunto integrado de componentes y procesos que conforman la solución desarrollada en el TFM.}
+}
+
+\newglossaryentry{diagraclases}{
+    name={diagrama de clases},
+    description={Representación gráfica de las clases y sus relaciones en un sistema orientado a objetos.}
+}
+
+\newglossaryentry{diagradespliegue}{
+    name={diagrama de despliegue},
+    description={Diagrama que muestra la distribución física de los componentes del sistema y sus interconexiones.}
+}
+
+\newglossaryentry{prompt}{
+    name={prompt},
+    description={Término que se refiere a la instrucción que se le proporciona a un modelo de lenguaje para generar una respuesta.}
+}
+
+\newglossaryentry{hardware}{
+    name=Hardware,
+    description={Parte física de un sistema informático, incluyendo componentes como la CPU, memoria, discos duros, y periféricos},
+    first={Parte física de un sistema informático (Hardware)}
+}
+
+\newglossaryentry{software}{
+    name=Software,
+    description={Conjunto de programas y datos que permiten la realización de tareas específicas en un sistema informático},
+    first={Conjunto de programas y datos (Software)}
+}
+
+% Regresión Lineal
+\newglossaryentry{reglineal}{
+    name=Regresión Lineal,
+    description={Modelo estadístico que busca establecer una relación lineal entre una variable dependiente y una o más variables independientes. Se representa generalmente como $y = \beta_0 + \beta_1x_1 + \cdots + \beta_nx_n + \epsilon$, donde $\beta$ son los coeficientes y $\epsilon$ el error. Ampliamente utilizado para predicción y análisis inferencial}
+}
+
+% Overfitting
+\newglossaryentry{sobreajuste}{
+    name=Overfitting,
+    description={Fenómeno en machine learning donde un modelo se ajusta demasiado a los datos de entrenamiento, capturando ruido y patrones específicos en lugar de la señal general. Resulta en bajo rendimiento con datos nuevos. Se mitiga con técnicas como validación cruzada, regularización (L1/L2) y pruning}
+}
+
+% K-Means
+\newglossaryentry{kmeans}{
+    name=K-Means,
+    description={Algoritmo de clustering no supervisado que particiona datos en $k$ grupos. Opera de forma iterativa asignando puntos al centroide más cercano y recalculando centroides. Converge cuando las asignaciones se estabilizan, sensible a inicialización y usado en segmentación de mercados y preprocesamiento de datos.}
+}
+
+% Autoencoders en Ciberseguridad
+\newglossaryentry{autoencoderciber}{
+    name=Autoencoders,
+    description={Redes neuronales no supervisadas compuestas de un encoder para compresión y decoder para reconstrucción. En ciberseguridad detectan anomalías identificando discrepancias entre la entrada y su reconstrucción, con aplicaciones en detección de intrusiones (IDS), malware zero-day y análisis de tráfico inusual en redes.}
+}
+
+\newglossaryentry{clustering}{
+    name=Clustering,
+    description={Técnica de aprendizaje no supervisado que busca organizar datos en grupos (clusters) donde los elementos dentro de un mismo grupo son similares entre sí y diferentes a los de otros grupos.}
+}
+
+\newglossaryentry{on-premise}{
+    name={on-premise},
+    description={Modo de implementación en el que la infraestructura se aloja internamente en las instalaciones de la organización.}
+}
+
+\newglossaryentry{pay-as-you-go}{
+    name={pay-as-you-go},
+    description={Modelo de pago en el que se abona únicamente por los recursos efectivamente utilizados, reduciendo así los costos operativos.}
+}
+
+\newglossaryentry{overlay-networks}{
+    name={overlay networks},
+    description={Redes superpuestas que se implementan sobre una infraestructura física para garantizar la comunicación segura entre distintos entornos.}
+}
+
+\newglossaryentry{toolkit}{
+    name={toolkit},
+    description={Conjunto de herramientas nativas (por ejemplo, en Blender) utilizado para desarrollar interfaces gráficas o aplicaciones específicas.}
+}
+
+\newglossaryentry{deepfake}{
+    name=Deepfake,
+    description={Técnica de inteligencia artificial que genera contenido multimedia falso hiperrealista (videos, imágenes o audio) mediante redes neuronales profundas.}
+}
+
+\newglossaryentry{kubernetes}{
+    name={Kubernetes},
+    description={Sistema de orquestación de contenedores open source que automatiza el despliegue, escalado y administración de aplicaciones en contenedores.}
+}
+
+\newglossaryentry{ui}{
+    name={UI},
+    description={Conjunto de elementos gráficos y controles que permiten la interacción entre el usuario y un sistema o aplicación.}
+}
+
+\newglossaryentry{paper}{
+    name={paper},
+    description={Documento académico o científico en el que se exponen los resultados de una investigación. Suelen publicarse en revistas, conferencias o repositorios digitales.}
+}
+
+\newglossaryentry{github}{
+    name={GitHub},
+    description={Plataforma de desarrollo colaborativo basada en Git que permite gestionar, versionar y compartir proyectos de software en línea.}
+}
+
+\newglossaryentry{modelodifusion}{
+    name={modelo de difusión},
+    description={Tipo de modelo generativo que, a través de un proceso iterativo, añade y luego remueve ruido de datos para producir muestras realistas. Se utiliza en aplicaciones como la generación de imágenes, audio y otros medios.}
+}
+
+\newglossaryentry{stableDiffusion}{
+    name={Stable Diffusion-2},
+    description={Modelo generativo de texto a imagen que emplea técnicas de difusión latente para crear imágenes de alta calidad a partir de descripciones textuales.}
+}
+
+\newglossaryentry{stableDiffusion2}{
+    name={Stable Diffusion-2},
+    description={Versión avanzada del modelo Stable Diffusion, un modelo generativo de texto a imagen que emplea técnicas de difusión latente para crear imágenes de alta calidad a partir de descripciones textuales.}
+}
+
+\newglossaryentry{gpu}{
+    name={GPU},
+    description={Unidad de Procesamiento Gráfico, dispositivo especializado en realizar cálculos en paralelo para renderizar imágenes y acelerar procesos computacionales intensivos.}
+}
+
+\newglossaryentry{lidar}{
+    name={LiDAR},
+    description={Tecnología de detección y medición de distancias mediante pulsos láser, que permite generar mapas tridimensionales del entorno.}
+}
+
+\newglossaryentry{sonar}{
+    name={Sonar},
+    description={Sistema que utiliza ondas sonoras para la detección, localización y medición de la distancia de objetos, siendo especialmente útil en entornos submarinos.}
+}
+
+\newglossaryentry{gaussianas}{
+    name={Distribuciones gaussianas},
+    description={Distribuciones de probabilidad continuas, de forma de campana, definidas por una media y una desviación estándar, empleadas para modelar fenómenos naturales y errores de medición.}
+}
+
+\newglossaryentry{stylegans}{
+    name={StyleGANs},
+    description={Familia de redes generativas antagónicas que incorporan un mecanismo de inyección de estilo en la capa latente, permitiendo controlar y modular aspectos visuales en la generación de imágenes de alta calidad.}
+}
+
+\newglossaryentry{octane}{
+    name={motor de renderizado Octane},
+    description={Motor de renderizado basado en GPU que utiliza técnicas de trazado de rayos para generar imágenes fotorrealistas, destacándose por su rapidez y alta calidad.}
+}
+
+\newglossaryentry{spectralAI}{
+    name={Spectral AI Denoiser},
+    description={Herramienta basada en inteligencia artificial que emplea análisis espectral para reducir el ruido en imágenes renderizadas sin perder detalles importantes.}
+}
+
+\newglossaryentry{denoising}{
+    name={denoising},
+    description={Proceso de eliminación de ruido en imágenes mediante técnicas de inteligencia artificial, que mejora la calidad visual preservando la fidelidad de los detalles.}
+}
+
+\newglossaryentry{artefactos}{
+    name={artefactos},
+    description={Defectos visuales no deseados que pueden aparecer en imágenes debido a errores en la captura, procesamiento o renderizado, como aliasing, banding o distorsiones.}
+}
+
+\newglossaryentry{octaneCloud}{
+    name={Octane Render Cloud},
+    description={Servicio en la nube de Octane Render que permite utilizar recursos remotos para el procesamiento y renderizado de imágenes, facilitando el acceso a una alta capacidad de cómputo sin depender exclusivamente del hardware local.}
+}
+
+\newglossaryentry{pert}{
+    name={PERT (Program Evaluation and Review Technique)},
+    description={Técnica de análisis y planificación de proyectos que utiliza diagramas de red para determinar el camino crítico y estimar tiempos, facilitando la gestión de actividades y recursos},
+    first={PERT (Program Evaluation and Review Technique)},
+    text={PERT}
+}
+
+\newglossaryentry{gantt}{
+    name={Diagrama de Gantt},
+    description={Herramienta de planificación y programación de proyectos que muestra las tareas o actividades a lo largo del tiempo, facilitando el seguimiento del progreso y la asignación de recursos},
+    first={Diagrama de Gantt},
+    text={Gantt}
+}
+
+\newglossaryentry{aeat}{
+    name={Agencia Estatal de Administración Tributaria (AEAT)},
+    description={Órgano del Gobierno español encargado de la gestión, recaudación y control de los tributos, así como de la aplicación de la legislación tributaria y la lucha contra el fraude fiscal},
+    first={Agencia Estatal de Administración Tributaria (AEAT)},
+    text={AEAT}
+}
+
+\newglossaryentry{scrum}{
+    name={Scrum},
+    description={Metodología ágil de gestión y desarrollo de proyectos que se basa en iteraciones (sprints) y roles definidos para facilitar la colaboración y la adaptación continua},
+    first={Scrum},
+    text={Scrum}
+}
+
+\newglossaryentry{kanban}{
+    name={Kanban},
+    description={Método ágil de gestión visual de tareas que utiliza tarjetas y columnas para representar el flujo de trabajo, permitiendo identificar cuellos de botella y mejorar la eficiencia},
+    first={Kanban},
+    text={Kanban}
+}
+
+\newglossaryentry{metagil}{
+    name={Metodología Ágil},
+    description={Conjunto de principios y prácticas para el desarrollo de software que promueve la colaboración, la adaptabilidad y la entrega continua de valor en contraste con enfoques tradicionales},
+    first={Metodología Ágil},
+    text={Metodología Ágil}
+}
+
+\newglossaryentry{iterativa}{
+    name={Metodología Iterativa/Incremental},
+    description={Enfoque de desarrollo de software que se basa en la repetición de ciclos (iteraciones) y en la adición progresiva de funcionalidades, permitiendo refinar el producto final de manera continua},
+    first={Metodología Iterativa/Incremental},
+    text={Metodología Iterativa/Incremental}
+}
+
+\newglossaryentry{virtualbox}{
+    name={VirtualBox},
+    description={Software de virtualización que permite ejecutar sistemas operativos completos como máquinas virtuales en un equipo físico, facilitando pruebas y desarrollo en múltiples entornos},
+    first={VirtualBox},
+    text={VirtualBox}
+}
+
+\newglossaryentry{hipervisor}{
+    name={Hipervisor},
+    description={Software o firmware encargado de crear y gestionar máquinas virtuales, permitiendo que varios sistemas operativos se ejecuten en el mismo hardware físico},
+    first={Hipervisor},
+    text={Hipervisor}
+}
+
+\newglossaryentry{rgpd}{
+    name={Reglamento General de Protección de Datos (RGPD)},
+    description={Normativa de la Unión Europea que establece las directrices para la protección de datos personales y la privacidad, asegurando derechos y obligaciones a ciudadanos y organizaciones},
+    first={Reglamento General de Protección de Datos (RGPD)},
+    text={RGPD}
+}
+
+\newglossaryentry{lopdgdd}{
+    name={Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)},
+    description={Ley Orgánica 3/2018 que adapta y complementa en España el marco establecido por el RGPD y regula la protección de los datos personales y los derechos digitales},
+    first={Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)},
+    text={LOPDGDD}
+}
+
+\newglossaryentry{aiact}{
+    name={Reglamento de la Unión Europea sobre la Inteligencia Artificial (AI Act)},
+    description={Reglamento (UE) 2024/1689 que establece normas armonizadas para el desarrollo, la introducción en el mercado, la puesta en servicio y la utilización de sistemas de inteligencia artificial en la Unión Europea},
+    first={Reglamento de la Unión Europea sobre la Inteligencia Artificial (AI Act)},
+    text={AI Act}
+}
+
+\newglossaryentry{microsofteula}{
+    name={Microsoft EULA},
+    description={Acuerdo legal entre Microsoft Corporation (o una de sus afiliadas) y el usuario que define los términos de uso, actualizaciones, servicios y obligaciones asociadas al software de Microsoft},
+    first={Microsoft EULA},
+    text={EULA}
+}
+
+\newglossaryentry{gnugpl3}{
+    name={GNU General Public License v3 (GPL v3)},
+    description={Licencia copyleft fuerte que garantiza las libertades de uso, modificación y distribución, exige compartir los derivados bajo los mismos términos y protege contra DRM y cuestiones de patentes},
+    first={GNU GPL v3},
+    text={GPL v3}
+}
+
+\newglossaryentry{apache2.0}{
+    name={Apache License 2.0},
+    description={Licencia permisiva que permite uso comercial, modificación, distribución y concede derechos de patente, requiriendo la inclusión de avisos de copyright y descargo de responsabilidad “AS IS”},
+    first={Apache License 2.0},
+    text={Apache 2.0}
+}
+
+\newglossaryentry{gnugpl2plus}{
+    name={GNU General Public License v2 or later (GPL v2+)},
+    description={Licencia copyleft que garantiza las libertades de uso, modificación y distribución bajo GPL v2 y permite optar por versiones posteriores de la GPL para los derivados},
+    first={GNU GPL v2+},
+    text={GPL v2+}
+}
+
+\newglossaryentry{psfl}{
+    name={Python Software Foundation License (PSFL)},
+    description={Licencia específica para Python y sus bibliotecas estándar, que concede un permiso no exclusivo, libre de regalías y mundial para reproducir, distribuir y crear derivados, con la obligación de conservar el texto de la licencia},
+    first={Python Software Foundation License},
+    text={PSFL}
+}
+
+\newglossaryentry{bsd3}{
+    name={BSD-3-Clause License},
+    description={Licencia permisiva que permite uso, modificación y distribución libre, requiriendo la inclusión del aviso de copyright y la cláusula de no aprobación por parte de los autores},
+    first={BSD-3-Clause License},
+    text={BSD-3-Clause}
+}
+
+\newglossaryentry{bsd2}{
+    name={BSD 2-Clause License},
+    description={Licencia permisiva que permite el uso, la modificación y la redistribución del software siempre que se conserven el aviso de copyright y el descargo de responsabilidad},
+    first={BSD 2-Clause License},
+    text={BSD-2-Clause}
+}
+
+\newglossaryentry{gpl2only}{
+    name={GNU General Public License v2.0 only (GPL-2.0-only)},
+    description={Licencia copyleft que permite usar, estudiar, modificar y redistribuir el software, pero exige distribuir las obras derivadas bajo la versión 2 de la GPL},
+    first={GNU General Public License v2.0 only},
+    text={GPL-2.0-only}
+}
+
+\newglossaryentry{lppl}{
+    name={LaTeX Project Public License (LPPL)},
+    description={Licencia de software libre diseñada para componentes del ecosistema LaTeX, que regula su modificación y distribución y protege la compatibilidad de los ficheros identificados},
+    first={LaTeX Project Public License},
+    text={LPPL}
+}
+
+\newglossaryentry{mit}{
+    name={MIT License},
+    description={Licencia permisiva breve que autoriza casi cualquier uso, modificación y distribución, con la única condición de incluir el aviso de copyright y la licencia en todas las copias},
+    first={MIT License},
+    text={MIT}
+}
+
+\newglossaryentry{agpl3}{
+    name={GNU Affero General Public License v3 (AGPL 3.0)},
+    description={Licencia copyleft fuerte con cláusula de red que exige publicar el código fuente de aplicaciones distribuidas o accesibles por red, y mantiene la concesión de patentes de GPL v3},
+    first={AGPL 3.0},
+    text={AGPL 3.0}
+}
+
+\newglossaryentry{ubuntu}{
+    name={Ubuntu},
+    description={Distribución de Linux basada en Debian, desarrollada por Canonical Ltd. Es conocida por su facilidad de uso y amplia adopción en entornos de escritorio, servidores y la nube},
+    first={Ubuntu},
+    text={Ubuntu}
+}
+
+\newglossaryentry{debian}{
+    name={Debian},
+    description={Distribución de Linux libre y de código abierto, mantenida por una comunidad de voluntarios. Es reconocida por su estabilidad y es la base de muchas otras distribuciones, incluyendo Ubuntu},
+    first={Debian},
+    text={Debian}
+}
+
+\newglossaryentry{archlinux}{
+    name={Arch Linux},
+    description={Distribución de Linux independiente y de propósito general, que sigue el principio KISS (Keep It Simple, Stupid). Se caracteriza por su modelo de lanzamiento continuo y su enfoque en la simplicidad y el control del usuario},
+    first={Arch Linux},
+    text={Arch Linux}
+}
+
+\newglossaryentry{kalilinux}{
+    name={Kali Linux},
+    description={Distribución de Linux basada en Debian, diseñada para pruebas de penetración y auditorías de seguridad. Incluye numerosas herramientas preinstaladas para análisis forense y pruebas de seguridad},
+    first={Kali Linux},
+    text={Kali Linux}
+}
+
+\newglossaryentry{podman}{
+    name={Podman},
+    description={Herramienta de gestión de contenedores compatible con Docker, que permite ejecutar, construir y administrar contenedores sin necesidad de un daemon en segundo plano, promoviendo una arquitectura sin demonios y mayor seguridad},
+    first={Podman},
+    text={Podman}
+}
+
+\newglossaryentry{lxc}{
+    name={LXC},
+    description={Tecnología de virtualización a nivel de sistema operativo que permite ejecutar múltiples sistemas Linux aislados (contenedores) en un único host, utilizando las funcionalidades de namespaces y cgroups del kernel de Linux},
+    first={Linux Containers (LXC)},
+    text={LXC}
+}
+
+\newglossaryentry{minikube}{
+    name={Minikube},
+    description={Herramienta que facilita la ejecución local de un clúster de Kubernetes, permitiendo a los desarrolladores probar y desplegar aplicaciones en un entorno controlado y simulado},
+    first={Minikube},
+    text={Minikube}
+}
+
+\newglossaryentry{fullstack}{
+    name={Full-Stack},
+    description={Perfil de desarrollador capaz de trabajar tanto en el front-end como en el back-end de una aplicación, manejando tecnologías de interfaz de usuario, lógica de negocio y bases de datos},
+    first={Full-Stack},
+    text={Full-Stack}
+}
+
+\newglossaryentry{typescript}{
+    name={TypeScript},
+    description={Lenguaje de programación de código abierto desarrollado por Microsoft, que extiende JavaScript añadiendo tipado estático opcional y características orientadas a objetos, facilitando el desarrollo de aplicaciones a gran escala},
+    first={TypeScript},
+    text={TypeScript}
+}
+
+\newglossaryentry{java}{
+    name={Java},
+    description={Lenguaje de programación de propósito general, orientado a objetos y basado en clases, diseñado para tener pocas dependencias de implementación y ampliamente utilizado en aplicaciones empresariales y móviles},
+    first={Java},
+    text={Java}
+}
+
+\newglossaryentry{javascript}{
+    name={JavaScript},
+    description={Lenguaje de programación interpretado, orientado a objetos y basado en prototipos, ampliamente utilizado para el desarrollo de páginas web interactivas y aplicaciones del lado del cliente y del servidor},
+    first={JavaScript},
+    text={JavaScript}
+}
+
+\newglossaryentry{blenderui}{
+    name={Blender UI Toolkit},
+    description={Conjunto de herramientas y componentes proporcionados por Blender para la creación y personalización de interfaces de usuario dentro del entorno de Blender, facilitando el desarrollo de complementos y extensiones},
+    first={Blender UI Toolkit},
+    text={Blender UI Toolkit}
+}
+
+\newglossaryentry{pydantic}{
+    name={Pydantic},
+    description={Biblioteca de validación de datos y configuración para Python, que utiliza anotaciones de tipo para validar y analizar datos de manera eficiente},
+    first={Pydantic},
+    text={Pydantic}
+}
+
+\newglossaryentry{uml}{
+    name={UML (Lenguaje de Modelado Unificado)},
+    description={Lenguaje gráfico estandarizado para visualizar, especificar, construir y documentar sistemas de software y otros sistemas, mediante un conjunto de notaciones que permiten describir estructuras estáticas, comportamientos dinámicos y arquitecturas de componentes},
+    first={Unified Modeling Language (UML)},
+    text={UML}
+}
+
+\newglossaryentry{sus}{
+    name={System Usability Scale (SUS)},
+    description={Método estandarizado para evaluar la usabilidad de sistemas interactivos mediante un cuestionario de 10 ítems con escala Likert de 5 puntos, que proporciona una puntuación global de usabilidad fácil de interpretar},
+    first={System Usability Scale (SUS)},
+    text={SUS}
+}
+
+\newglossaryentry{zap}{
+    name={Zed Attack Proxy (ZAP)},
+    description={Herramienta de código abierto para pruebas de seguridad en aplicaciones web que actúa como proxy interceptador, permitiendo análisis automatizado y manual de vulnerabilidades como inyección SQL, XSS, CSRF y más},
+    first={Zed Attack Proxy (ZAP)},
+    text={ZAP}
+}
+
+\newglossaryentry{cot}{
+    name=CoT,
+    description={Cadena de Pensamiento (Chain of Thought), técnica donde un modelo de lenguaje descompone un problema complejo en pasos intermedios lógicos antes de generar una respuesta},
+    first={Cadena de Pensamiento (Chain of Thought, CoT)}
+}
+
+\newglossaryentry{rag}{
+    name=RAG,
+    description={Generación Aumentada por Recuperación (Retrieval-Augmented Generation), arquitectura que combina la recuperación de información externa con la generación de texto de un modelo de lenguaje},
+    first={Generación Aumentada por Recuperación (Retrieval-Augmented Generation, RAG)}
+}
+
+% === Nuevas entradas para el TFM (LocalMind-AI) ===
+
+\newglossaryentry{agenteia}{
+    name={Agente de IA},
+    description={Sistema que percibe su entorno, razona sobre el estado de dicho entorno y ejecuta acciones para alcanzar uno o varios objetivos.},
+    first={Agente de Inteligencia Artificial},
+    plural={Agentes de IA}
+}
+
+\newglossaryentry{sistemaMultiagente}{
+    name={Sistema Multiagente},
+    description={Sistema compuesto por múltiples agentes de IA que interactúan, coordinan o negocian entre sí para resolver problemas distribuidos.},
+    plural={Sistemas Multiagente}
+}
+
+\newglossaryentry{react}{
+    name=ReAct,
+    description={Arquitectura de razonamiento (Reasoning y Acting) para modelos de lenguaje que entrelaza pasos de razonamiento interno con acciones sobre herramientas externas.},
+    first={Reasoning y Acting (ReAct)}
+}
+
+\newglossaryentry{reflexion}{
+    name={Reflexión},
+    description={Mecanismo mediante el cual un agente de IA evalúa su propio desempeño y ajusta su estrategia en iteraciones posteriores.},
+    first={Reflexión en agentes de IA}
+}
+
+\newglossaryentry{planeacion}{
+    name={Planificación},
+    description={Capacidad de descomponer un objetivo en subobjetivos y secuenciar acciones antes de ejecutarlas.},
+    first={Planificación en agentes de IA}
+}
+
+\newglossaryentry{funciontool}{
+    name={Function/Tool Calling},
+    description={Mecanismo que permite a un modelo de lenguaje invocar procedimientos externos parametrizados.},
+    first={Llamada a funciones (Function/Tool Calling)}
+}
+
+\newacronym{mcp}{MCP}{Model Context Protocol}
+
+\newglossaryentry{nanobot}{
+    name=Nanobot,
+    description={Framework ultraligero de orquestación de agentes de IA utilizado como núcleo del proyecto LocalMind-AI.}
+}
+
+\newglossaryentry{chromadb}{
+    name=ChromaDB,
+    description={Base de datos vectorial orientada a embeddings, empleada para almacenar y recuperar documentos en flujos RAG.}
+}
+
+\newglossaryentry{reactnative}{
+    name={React Native},
+    description={Framework de desarrollo de aplicaciones multiplataforma (móviles y web) basado en React.}
+}
+
+\newglossaryentry{expo}{
+    name=Expo,
+    description={Plataforma y conjunto de herramientas para el desarrollo y despliegue de aplicaciones React Native.}
+}
+
+\newglossaryentry{embeddings}{
+    name=embedding,
+    description={Representaciones vectoriales densas de texto u otros datos, utilizadas para búsqueda semántica en sistemas RAG.},
+    first={embedding (representación vectorial densa)},
+    plural={embeddings},
+    firstplural={embeddings (representaciones vectoriales densas)}
+}
+
+\newglossaryentry{localfirst}{
+    name={Local-first},
+    description={Paradigma de diseño de software en el que los datos y la computación priman en el dispositivo del usuario, minimizando la dependencia de la nube.}
+}
+
+\newglossaryentry{engram}{
+    name=Engram,
+    description={Servidor del Model Context Protocol (MCP) que proporciona almacenamiento y recuperación semántica de la memoria a largo plazo para agentes autónomos.}
+}
+
+\newglossaryentry{containercli}{
+    name={Apple Container CLI},
+    description={Herramienta de código abierto desarrollada por Apple para la creación y gestión ligera de contenedores en macOS aprovechando las primitivas de virtualización nativas del sistema.}
+}
+
+\newglossaryentry{django}{
+    name={Django},
+    description={Framework web de alto nivel para Python que incluye mecanismos integrados para la construcción de aplicaciones y APIs.}
+}
+
+\newglossaryentry{reactjs}{
+    name={React},
+    description={Biblioteca de JavaScript para construir interfaces de usuario mediante componentes declarativos.}
+}
+
+\newglossaryentry{angular}{
+    name={Angular},
+    description={Framework de desarrollo de aplicaciones web basado en TypeScript y una arquitectura de componentes.}
+}
+
+\newglossaryentry{openclaw}{
+    name={OpenClaw},
+    description={Plataforma de agentes de IA orientada a la automatización y a la integración con canales y herramientas externas.}
+}
+
+\newglossaryentry{smolagents}{
+    name={smolagents},
+    description={Biblioteca ligera de Hugging Face para construir agentes que emplean herramientas y código.}
+}
+
+\newglossaryentry{picodingagent}{
+    name={Pi Coding Agent},
+    description={Agente interactivo de línea de comandos orientado a tareas de programación asistida por modelos de lenguaje.}
+}
+
+\newglossaryentry{vllm}{
+    name={vLLM},
+    description={Motor de inferencia y servidor de modelos de lenguaje orientado a alto rendimiento y alto rendimiento por lotes.}
+}
+
+\newglossaryentry{chatrtx}{
+    name={ChatRTX},
+    description={Aplicación de NVIDIA para ejecutar de forma local modelos generativos y recuperación documental en equipos Windows con GPU RTX compatible.}
+}
+
+\newglossaryentry{nodejs}{
+    name={Node.js},
+    description={Entorno de ejecución de JavaScript basado en el motor V8, empleado para herramientas de desarrollo y aplicaciones del lado del servidor.}
+}
+
+\newglossaryentry{pnpm}{
+    name={pnpm},
+    description={Gestor de paquetes para el ecosistema JavaScript que reutiliza un almacén de contenido direccionable para reducir instalaciones redundantes.}
+}
+
+\newglossaryentry{git}{
+    name={Git},
+    description={Sistema de control de versiones distribuido para registrar, comparar y sincronizar cambios en el código fuente.}
+}
+
+\newacronym{cpu}{CPU}{Unidad Central de Procesamiento}
+\newacronym{npu}{NPU}{Unidad de Procesamiento Neuronal}
+\newacronym{lora}{LoRA}{Adaptación de Bajo Rango (Low-Rank Adaptation)}
+
+\newglossaryentry{litert}{
+    name={LiteRT},
+    description={Entorno de ejecución de alto rendimiento de Google (anteriormente TensorFlow Lite) optimizado para la inferencia de modelos en dispositivos móviles y de borde.}
+}
+
+\newglossaryentry{toolrag}{
+    name={ToolRAG},
+    description={Mecanismo especializado en la recuperación y selección selectiva de las descripciones y ejemplos de herramientas más pertinentes para contextualizar la petición enviada al modelo.}
+}
+
+\newglossaryentry{llmcompiler}{
+    name={LLMCompiler},
+    description={Framework de optimización y compilación de llamadas a funciones que genera planes de ejecución en paralelo para herramientas de agentes inteligentes.}
+}
+
+\newglossaryentry{macos}{
+    name={macOS},
+    description={Sistema operativo desarrollado por Apple para sus ordenadores Macintosh, basado en Unix y utilizado en la evaluación de sistemas de agentes en el borde.}
+}
+
+% === Tecnologías documentales y de terminal empleadas en el TFM ===
+
+\newglossaryentry{bash}{
+    name={Bash},
+    description={Intérprete de órdenes y lenguaje de scripting utilizado para automatizar la instalación y el control del sistema.}
+}
+
+\newglossaryentry{yaml}{
+    name={YAML},
+    description={Lenguaje de serialización legible utilizado para describir configuraciones, entre ellas Docker Compose.}
+}
+
+\newglossaryentry{latex}{
+    name={LaTeX},
+    description={Sistema de preparación de documentos basado en TeX empleado para redactar y componer la memoria.}
+}
+
+\newglossaryentry{plantuml}{
+    name={PlantUML},
+    description={Lenguaje textual y herramienta para generar diagramas versionables, incluido el diagrama de Gantt.}
+}
+
+\newglossaryentry{mactex}{
+    name={MacTeX},
+    description={Distribución de TeX para macOS que proporciona los motores y herramientas de compilación de la memoria.}
+}
+
+\newglossaryentry{tui}{
+    name={TUI},
+    description={Interfaz de usuario en terminal (Terminal User Interface) controlada mediante teclado.},
+    first={interfaz de usuario en terminal (TUI)}
+}
+
+\newglossaryentry{mvu}{
+    name={MVU},
+    description={Patrón Model-View-Update que separa el estado, su actualización por eventos y el renderizado de la vista.},
+    first={Model-View-Update (MVU)}
+}
+
+\newglossaryentry{ansi}{
+    name={ANSI},
+    description={Conjunto de secuencias de escape utilizadas por terminales para controlar colores, cursor y pantalla.},
+    first={secuencias de escape ANSI}
+}
+
+\newglossaryentry{aiohttp}{
+    name={aiohttp},
+    description={Biblioteca asíncrona de Python para implementar clientes y servidores HTTP y WebSocket.}
+}
+
+\newglossaryentry{websocket}{
+    name={WebSocket},
+    description={Protocolo que establece un canal bidireccional persistente entre cliente y servidor sobre una conexión TCP.},
+    plural={WebSockets}
+}
+
+\newglossaryentry{golang}{
+    name={Go},
+    description={Lenguaje de programación compilado empleado por Gentle-AI y el framework Bubble Tea.}
+}
+
+\newglossaryentry{jsonl}{
+    name={JSONL},
+    description={Formato de texto que almacena un objeto JSON por línea y facilita el registro incremental de sesiones.}
+}
+
+\newglossaryentry{cotrag}{
+    name={CoT-RAG},
+    description={Protocolo de cinco pasos (Entender, Planificar, Ejecutar, Sintetizar, Responder) que combina el razonamiento en cadena (Chain-of-Thought) con la generación aumentada por recuperación (RAG) para que el agente descomponga problemas complejos y fundamente sus respuestas en la base de conocimiento local.},
+    first={CoT-RAG (Chain-of-Thought RAG)}
+}
+
+\newglossaryentry{baileys}{
+    name={Baileys},
+    description={Biblioteca TypeScript de código abierto que implementa el protocolo de WhatsApp Web, utilizada como puente para canalizar mensajes entre WhatsApp y el agente de LocalMind-AI.}
+}

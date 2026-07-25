@@ -1,0 +1,39 @@
+@startuml
+!theme plain
+scale 1.8
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 22
+skinparam ArrowFontSize 18
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+title Razonamiento durante la generación de código
+
+rectangle "Razonamiento previo" as upfront #DDEBF7 {
+  rectangle "Petición de código" as upfront_request #FFFFFF
+  rectangle "Razonamiento global\nantes de implementar" as upfront_reason #FFFFFF
+  rectangle "Generación continua\nde código" as upfront_code #FFFFFF
+  upfront_request --> upfront_reason : plan inicial
+  upfront_reason --> upfront_code : comenzar a escribir
+}
+
+rectangle "Razonamiento bajo demanda" as ondemand #E2F0D9 {
+  rectangle "Petición de código" as ondemand_request #FFFFFF
+  rectangle "Plan inicial\nbreve" as ondemand_plan #FFFFFF
+  rectangle "Generación de código" as ondemand_code #FFFFFF
+  rectangle "Punto complejo" as ondemand_point #FFF2CC
+  rectangle "Razonamiento local\ncuando hace falta" as ondemand_reason #FFFFFF
+  rectangle "Continuación de código" as ondemand_continue #FFFFFF
+  ondemand_request --> ondemand_plan
+  ondemand_plan --> ondemand_code
+  ondemand_code --> ondemand_point : aparece una decisión
+  ondemand_point --> ondemand_reason : invocar razonamiento
+  ondemand_reason --> ondemand_continue : incorporar la corrección
+}
+
+note bottom of upfront_code
+  La dificultad puede aparecer
+  después del plan inicial.
+end note
+@enduml

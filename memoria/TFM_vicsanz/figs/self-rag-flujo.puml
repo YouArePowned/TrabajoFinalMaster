@@ -1,0 +1,29 @@
+@startuml
+!theme plain
+scale 1.65
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 22
+skinparam ArrowFontSize 18
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+title Flujo adaptativo de recuperación, generación y crítica
+
+actor "Pregunta" as question
+rectangle "Decidir si\nRecuperar evidencia" as retrieve_decision #FFF2CC
+database "Documentos\nrecuperados" as documents #DDEBF7
+rectangle "Generar\nrespuesta candidata" as generate #E2F0D9
+rectangle "Criticar:\nrelevancia, respaldo\ny calidad" as critique #FCE4D6
+rectangle "Evaluar si la\nrespuesta es aceptable" as accept #FFF2CC
+rectangle "Respuesta\nfinal" as answer #E2F0D9
+
+question --> retrieve_decision
+retrieve_decision --> documents : sí
+retrieve_decision --> generate : no
+documents --> generate : contexto
+generate --> critique
+critique --> accept
+accept --> answer : sí
+accept --> retrieve_decision : no: ajustar decisión
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+!theme plain
+scale 1.8
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 22
+skinparam ArrowFontSize 18
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+title Gestión de herramientas mediante un servidor MCP
+
+top to bottom direction
+rectangle "Cliente de IA\nen el dispositivo" as client #DDEBF7
+rectangle "Configuración MCP" as config #FFF2CC
+rectangle "Servidor MCP" as server #E2F0D9
+rectangle "Herramientas\ndisponibles" as tools #FCE4D6
+rectangle "Resultado\nestructurado" as result #FFFFFF
+
+client -down-> config : añade o gestiona
+config -down-> server : registra y activa
+server -down-> tools : expone capacidades
+tools -down-> result : ejecuta una acción
+
+note right of config
+  Controles explicativos: añadir,
+  activar/desactivar y consultar herramientas.
+end note
+@enduml

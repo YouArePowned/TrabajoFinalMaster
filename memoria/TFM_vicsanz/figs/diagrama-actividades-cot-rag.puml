@@ -1,0 +1,68 @@
+@startuml
+skin rose
+skinparam dpi 150
+skinparam nodesep 30
+skinparam ranksep 40
+
+start
+
+:Persona usuaria envía mensaje;
+
+partition "**1. Entender**" {
+    :Parsear intención del mensaje;
+    :Identificar entidades y contexto;
+}
+
+partition "**2. Planificar**" {
+    :Decidir estrategia:\ndirecta / RAG / herramientas;
+}
+
+if (¿Necesita RAG?) then (sí)
+    :Consultar ChromaDB (top-k);
+    :Recuperar fragmentos relevantes;
+    :Filtrar por umbral de similitud;
+else (no)
+endif
+
+if (¿Necesita herramientas?) then (sí)
+    :Resolver herramienta en ToolRegistry;
+
+    if (¿Herramienta protegida?) then (sí)
+        :Solicitar confirmación al usuario;
+
+        if (¿Usuario acepta?) then (Aceptar)
+            :Ejecutar herramienta vía MCP stdio;
+        elseif (Rechazar) then
+            :Cancelar ejecución;
+            :Notificar al agente;
+            kill
+        else (Siempre)
+            :Añadir a lista blanca;
+            :Ejecutar herramienta vía MCP stdio;
+        endif
+    else (no)
+        :Ejecutar herramienta directamente;
+    endif
+
+    :Incorporar resultado al contexto;
+else (no)
+endif
+
+partition "**3. Ejecutar**" {
+    :Enviar prompt enriquecido al LLM;
+    :Recibir streaming de tokens;
+}
+
+partition "**4. Sintetizar**" {
+    :Consolidar respuesta completa;
+    :Almacenar en historial JSONL;
+}
+
+partition "**5. Responder**" {
+    :Enviar stream_end al cliente;
+    :Mostrar respuesta al usuario;
+}
+
+stop
+
+@enduml

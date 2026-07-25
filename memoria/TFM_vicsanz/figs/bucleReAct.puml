@@ -1,0 +1,21 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+
+start
+:Observación del entorno;
+:Razonamiento interno (CoT);
+if (¿Se necesita herramienta?) then (sí)
+  :Llamada a función / tool;
+  :Ejecución en el entorno;
+  :Observación del resultado;
+  repeat
+    :Razonamiento;
+    :Acción;
+  repeat while (¿Objetivo alcanzado?) is (no)
+else (no)
+  :Respuesta final;
+endif
+stop
+
+@enduml

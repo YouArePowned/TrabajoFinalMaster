@@ -1,0 +1,110 @@
+@startuml
+skin rose
+skinparam dpi 150
+skinparam nodesep 30
+skinparam ranksep 40
+autonumber
+skinparam sequence {
+    ArrowColor DarkBlue
+    ActorBorderColor DarkBlue
+    LifeLineBorderColor Gray
+}
+
+actor "Persona usuaria" as User
+participant "WebUI\n(Expo / React Native Web)" as WebUI
+participant "WebSocketChannel\n:8765" as WS
+participant "MessageBus" as Bus
+participant "AgentLoop" as AL
+participant "ContextBuilder" as CB
+participant "AgentRunner" as AR
+participant "LLMProvider\n(OpenAICompatProvider)" as LLM
+participant "Ollama/oMLX\nhost.docker.internal" as Inf
+participant "ToolRegistry" as TR
+participant "McpToolsServer" as MCP
+participant "ChromaCollection" as Chroma
+
+== Flujo principal: envío de mensaje y respuesta en streaming ==
+
+User -> WebUI : escribe mensaje
+WebUI -> WS : envelope new_chat
+WS -> Bus : publish(inbound)
+Bus -> AL : process_message()
+
+AL -> CB : build_context()
+
+alt [RAG necesario]
+    CB -> Chroma : query(top-k)
+    Chroma --> CB : fragmentos relevantes
+end
+
+AL -> AR : run(spec)
+AR -> LLM : complete(prompt)
+LLM -> Inf : POST /v1/chat/completions
+
+loop streaming deltas
+    Inf --> LLM : token incremental
+    LLM --> AR : yield delta
+    AR --> AL : publish delta
+    AL --> Bus : publish(outbound)
+    Bus --> WS : send_delta()
+    WS --> WebUI : stream_delta
+    WebUI --> User : muestra delta
+end
+
+Inf --> LLM : [DONE]
+LLM --> AR : stream_end
+AR --> AL : fin de ejecución
+AL --> Bus : publish(stream_end)
+Bus --> WS : stream_end
+WS --> WebUI : stream_end
+WebUI --> User : respuesta completa
+
+== Flujo alternativo: invocación de herramienta con confirmación ==
+
+alt [LLM decide invocar herramienta]
+    AR -> TR : resolve(tool_name)
+    TR --> AR : tool_descriptor
+
+    opt [herramienta protegida]
+        AR --> WS : request_confirm(tool, params)
+        WS --> WebUI : diálogo de confirmación
+        WebUI --> User : ¿Aceptar / Rechazar / Siempre?
+
+        alt [Aceptar]
+            User --> WebUI : aceptar
+            WebUI --> WS : confirm(accept)
+        else [Rechazar]
+            User --> WebUI : rechazar
+            WebUI --> WS : confirm(reject)
+            WS --> AR : abort
+            AR --> AL : tool_cancelled
+        else [Siempre]
+            User --> WebUI : siempre
+            WebUI --> WS : confirm(always)
+            WS --> AR : whitelist + execute
+        end
+    end
+
+    AR -> MCP : execute_tool(params) via stdio
+    MCP --> AR : tool_result
+    AR -> LLM : complete(prompt + tool_result)
+    LLM -> Inf : POST /v1/chat/completions
+end
+
+== Flujo de excepción: gestión de errores ==
+
+alt [Motor de inferencia no disponible]
+    Inf --> LLM : timeout / unreachable
+    LLM --> AR : error
+    AR --> AL : fallback_message
+    AL --> Bus : publish(error)
+    Bus --> WS : stream_end(error)
+    WS --> WebUI : mensaje de error legible
+    WebUI --> User : notificación + opción reintentar
+else [ChromaDB no disponible]
+    CB -> Chroma : query(top-k)
+    Chroma --> CB : error
+    CB --> AL : omitir RAG, continuar sin contexto
+end
+
+@enduml

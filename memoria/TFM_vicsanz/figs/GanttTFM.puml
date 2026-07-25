@@ -1,0 +1,92 @@
+@startgantt
+' Planificación temporal de LocalMind-AI (TFM)
+scale 1.35
+title Planificación temporal de LocalMind-AI - 7 de enero a 28 de agosto de 2026
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+printscale weekly
+Project starts 2026-01-07
+monday are closed
+tuesday are closed
+wednesday are closed
+
+-- Documentación --
+[Estado del arte y prototipos] starts 2026-01-08 and ends 2026-01-17
+[Estado del arte y prototipos] is colored in #DCEAF5/#2F6B9A
+[Redacción y revisión de la memoria] starts 2026-01-07 and ends 2026-08-28
+[Redacción y revisión de la memoria] is colored in #DCEAF5/#2F6B9A
+
+-- Análisis --
+[Definición de requisitos] starts 2026-01-17 and ends 2026-01-24
+[Definición de requisitos] is colored in #E9E0F2/#6F4C9B
+[Especificación del sistema] starts 2026-01-24 and ends 2026-02-01
+[Especificación del sistema] is colored in #E9E0F2/#6F4C9B
+
+-- Diseño --
+[Arquitectura local-first y despliegue] starts 2026-02-05 and ends 2026-02-12
+[Arquitectura local-first y despliegue] is colored in #DDF1EB/#1F7A65
+[Interacción web y TUI] starts 2026-02-12 and ends 2026-02-19
+[Interacción web y TUI] is colored in #DDF1EB/#1F7A65
+[Comunicación WebSocket / REST] starts 2026-02-19 and ends 2026-02-26
+[Comunicación WebSocket / REST] is colored in #DDF1EB/#1F7A65
+[Agente, MCP y memoria] starts 2026-02-26 and ends 2026-03-07
+[Agente, MCP y memoria] is colored in #DDF1EB/#1F7A65
+[RAG, ChromaDB y embeddings (diseño)] starts 2026-03-07 and ends 2026-03-14
+[RAG, ChromaDB y embeddings (diseño)] is colored in #DDF1EB/#1F7A65
+[Inferencia local y multiplataforma] starts 2026-03-14 and ends 2026-03-21
+[Inferencia local y multiplataforma] is colored in #DDF1EB/#1F7A65
+
+-- Implementación --
+[TUI y lanzadores] starts 2026-03-21 and ends 2026-04-02
+[TUI y lanzadores] is colored in #F8E4D3/#B35C1E
+[Cliente Expo / React Native Web] starts 2026-04-02 and ends 2026-04-23
+[Cliente Expo / React Native Web] is colored in #F8E4D3/#B35C1E
+[Exportación estática y Nginx] starts 2026-04-23 and ends 2026-05-02
+[Exportación estática y Nginx] is colored in #F8E4D3/#B35C1E
+[Pasarela aiohttp WebSocket / REST] starts 2026-05-02 and ends 2026-05-21
+[Pasarela aiohttp WebSocket / REST] is colored in #F8E4D3/#B35C1E
+[RAG, ChromaDB y embeddings (impl.)] starts 2026-05-21 and ends 2026-06-04
+[RAG, ChromaDB y embeddings (impl.)] is colored in #F8E4D3/#B35C1E
+[Sesiones, JSONL / Markdown y Engram] starts 2026-06-04 and ends 2026-06-13
+[Sesiones, JSONL / Markdown y Engram] is colored in #F8E4D3/#B35C1E
+[Herramientas MCP y confirmaciones] starts 2026-06-13 and ends 2026-06-23
+[Herramientas MCP y confirmaciones] is colored in #F8E4D3/#B35C1E
+[Proveedores Ollama / oMLX] starts 2026-06-23 and ends 2026-06-28
+[Proveedores Ollama / oMLX] is colored in #F8E4D3/#B35C1E
+[Dockerfiles, Compose e integración] starts 2026-06-28 and ends 2026-07-02
+[Dockerfiles, Compose e integración] is colored in #F8E4D3/#B35C1E
+
+-- Despliegue --
+[Entorno reproducible] starts 2026-07-02 and ends 2026-07-05
+[Entorno reproducible] is colored in #DFEAF5/#356AA0
+[Validación MSI / Windows] starts 2026-07-09 and ends 2026-07-12
+[Validación MSI / Windows] is colored in #DFEAF5/#356AA0
+[Validación MacBook / macOS] starts 2026-07-16 and ends 2026-07-19
+[Validación MacBook / macOS] is colored in #DFEAF5/#356AA0
+
+-- Pruebas --
+[Pruebas funcionales e integración] starts 2026-07-19 and ends 2026-07-24
+[Pruebas funcionales e integración] is colored in #F6EBCB/#8A5A00
+[Rendimiento y recursos] starts 2026-07-24 and ends 2026-07-30
+[Rendimiento y recursos] is colored in #F6EBCB/#8A5A00
+[Usabilidad, seguridad y aceptación] starts 2026-07-30 and ends 2026-08-02
+[Usabilidad, seguridad y aceptación] is colored in #F6EBCB/#8A5A00
+
+-- Reserva y cierre --
+[Contingencias y correcciones] starts 2026-08-06 and ends 2026-08-23
+[Contingencias y correcciones] is colored in #E5E7EB/#666666
+[Holgura no comprometida] starts 2026-08-27 and ends 2026-08-28
+[Holgura no comprometida] is colored in #DDEEDF/#3F7D4B
+[Entrega final] happens at 2026-08-28
+[Entrega final] is colored in #FADBD8/#9C1C31
+
+legend bottom
+  • <b>Columnas sombreadas (Lunes a Miércoles):</b> Jornada laboral ordinaria externa (40h/semana, no imputables al esfuerzo del TFM).
+  • <b>Columnas en blanco (Jueves a Domingo):</b> Periodos de dedicación efectiva al TFM (12h/semana distribuidas según la Tabla 3.1).
+endlegend
+
+@endgantt

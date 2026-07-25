@@ -1,0 +1,34 @@
+INFO:  latexindent.pl version 4.0, 2026-03-15, a script to indent .tex files
+       latexindent.pl lives here: /opt/homebrew/Cellar/latexindent/4.0/libexec/bin/
+       Sat Jul 25 23:46:22 2026
+       Filename: /Users/victorsanz/master-twcam/TFM/memoria/TFM_vicsanz/tex/__latexindent_temp_estado_arte.tex
+INFO:  Processing switches:
+       -y|--yaml: YAML settings specified via command line
+       -c|--cruft: cruft directory
+INFO:  Directory for backup files and log file /Users/victorsanz/master-twcam/TFM/memoria/TFM_vicsanz/indent.log:
+       /Users/victorsanz/master-twcam/TFM/memoria/TFM_vicsanz/
+INFO:  Perl modules are being loaded from the following directories:
+       /opt/homebrew/opt/perl/lib/perl5/5.42/FindBin.pm
+       /opt/homebrew/Cellar/latexindent/4.0/libexec/lib/perl5/YAML/Tiny.pm
+       /opt/homebrew/opt/perl/lib/perl5/5.42/File/Copy.pm
+       /opt/homebrew/opt/perl/lib/perl5/5.42/File/Basename.pm
+       /opt/homebrew/opt/perl/lib/perl5/5.42/Getopt/Long.pm
+       /opt/homebrew/Cellar/latexindent/4.0/libexec/lib/perl5/File/HomeDir.pm
+INFO:  LatexIndent perl modules are being loaded from, for example:
+       /opt/homebrew/Cellar/latexindent/4.0/libexec/lib/perl5/LatexIndent/Document.pm
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /opt/homebrew/Cellar/latexindent/4.0/libexec/bin/defaultSettings.yaml
+INFO:  YAML reading settings
+       Home directory is /Users/victorsanz
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options
+INFO:  YAML settings read: -y switch
+       YAML setting: defaultIndent:'    '
+       single-quoted string found in -y switch: '    ', substitute to     
+       Updating mainSetting with defaultIndent:     
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+       https://github.com/cmhughes/latexindent.pl
+       documentation: https://latexindentpl.readthedocs.io/en/latest/

@@ -1,0 +1,18 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam componentStyle rectangle
+
+rectangle "Entorno" as Env #E8F4FD
+rectangle "Agente de IA" as Agent #FFF2CC {
+  rectangle "Percepción" as Perception
+  rectangle "Razonamiento" as Reasoning
+  rectangle "Acción" as Action
+}
+
+Env --> Perception : observaciones
+Perception --> Reasoning : estado interpretado
+Reasoning --> Action : plan / decisión
+Action --> Env : ejecución
+
+@enduml

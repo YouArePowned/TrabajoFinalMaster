@@ -1,0 +1,38 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Bucle percepción-razonamiento-acción de un agente inteligente.}}{24}{figure.caption.5}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Bucle \gls {react} con razonamiento y acción entrelazados con el entorno.}}{25}{figure.caption.6}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Comparativa entre inferencia en la nube e inferencia local.}}{27}{figure.caption.7}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Pipeline RAG: indexado, recuperación y generación aumentada.}}{29}{figure.caption.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Razonamiento bajo demanda en Think-Anywhere}}{37}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Capturas de Google AI Edge Gallery}}{39}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces TinyAgent y su arquitectura de planificación}}{40}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparación entre RAG y Self-RAG}}{41}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparación conceptual entre las arquitecturas de Podman y Docker.}}{45}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Comparación conceptual entre los contenedores de sistema LXC y los contenedores de aplicación Docker.}}{45}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Comparación estructural entre la arquitectura nativa de Apple Container CLI y Docker.}}{46}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Comparación de flujo de ejecución entre Apple Container CLI y la infraestructura de Docker.}}{46}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Esquema conceptual de la arquitectura del framework Nanobot.}}{48}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Comparación visual entre la interfaz de terminal de Gentle-AI y la TUI de LocalMind-AI.}}{49}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Pantallas del selector de modelos e inferencia en la TUI de LocalMind-AI.}}{50}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Listado de herramientas MCP integradas y disponibles en la TUI de LocalMind-AI.}}{51}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Entorno de desarrollo empleado para compilar la memoria.}}{52}{figure.caption.37}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Mapa conceptual de LocalMind-AI.}}{58}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Entorno de ejecución local de LocalMind-AI.}}{59}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mapa conceptual de la capa de interacción.}}{60}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Mapa conceptual de la capa de aplicación y orquestación.}}{60}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Mapa conceptual de los servicios locales.}}{61}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama de Gantt del proyecto, del 7 de enero al 28 de agosto de 2026.}}{64}{figure.caption.46}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de casos de uso de LocalMind-AI.}}{81}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama general de secuencia del sistema.}}{82}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de clases general del sistema.}}{83}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de actividades del protocolo \gls {cotrag}.}}{85}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Diagrama de actividades del canal de comunicación \gls {websocket}.}}{86}{figure.caption.64}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

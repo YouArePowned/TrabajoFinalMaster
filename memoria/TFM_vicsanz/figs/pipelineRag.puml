@@ -1,0 +1,28 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+
+rectangle "Fase de indexado" as Index #E8F5E9 {
+  rectangle "Documentos" as Docs
+  rectangle "Embedding\nmodel" as Embed
+  database "Vector store" as VectorDB
+  Docs --> Embed : fragmentar
+  Embed --> VectorDB : almacenar vectores
+}
+
+rectangle "Fase de consulta" as Query #FFF3E0 {
+  rectangle "Pregunta del usuario" as Question
+  rectangle "Recuperación\n(top-k)" as Retrieve
+  rectangle "Augment\nprompt" as Augment
+  rectangle "LLM" as LLM
+  rectangle "Respuesta\nfundamentada" as Output
+  Question --> Retrieve : embedding de consulta
+  VectorDB --> Retrieve : vectores cercanos
+  Retrieve --> Augment : contexto recuperado
+  Augment --> LLM : prompt enriquecido
+  LLM --> Output 
+}
+
+Index -[hidden]-> Query
+
+@enduml
