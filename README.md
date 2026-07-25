@@ -1,4 +1,4 @@
-# 🧠 LocalMind-AI
+# LocalMind-AI
 
 Asistente de IA personal multitarea de ejecución en local, basado en la arquitectura **Nanobot** y motores de inferencia locales (**Ollama** / **Apple MLX**) con flujo **CoT-RAG** (Chain-of-Thought + Retrieval-Augmented Generation), memoria persistente (**Engram**) y herramientas **MCP** (Model Context Protocol).
 
